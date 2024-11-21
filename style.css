@@ -11,7 +11,7 @@ header {
 }
 
 .container {
-  padding: 1rem;
+  padding: 10px;
 }
 
 .top {
@@ -30,6 +30,8 @@ header {
   font-weight: 700;
   margin-left: auto;
   list-style-type: none;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .nav a {
@@ -56,6 +58,7 @@ header {
 
 .hero img {
   border-radius: 50%;
+  margin: 3rem;
 }
 
 .hero-box {
