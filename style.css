@@ -254,6 +254,11 @@ footer {
   background-color: var(--hover-color);
 }
 
+.socials a {
+  text-decoration: none;
+  color: blueviolet;
+}
+
 @media only screen and (max-width: 600px) {
   .top {
     justify-content: center;
@@ -266,5 +271,9 @@ footer {
   }
   .hero img {
     display: none;
+  }
+
+  .hero-text {
+    text-align: center;
   }
 }
