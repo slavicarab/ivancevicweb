@@ -12,17 +12,18 @@
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            <div class="top">  
-                <h1>Ivancevic Slavica</h1>
-
-                <ul class="nav">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="projects.html">Projects</a></li>    
-                </ul>
-
-            </div>   
+    <header class="site-header">
+        <div class="container nav-wrap">
+            <a class="brand" href="index.html">Slavica Ivancevic</a>
+            <nav class="nav" aria-label="Main navigation">
+                <a href="index.html#about" data-i18n="nav.about">About</a>
+                <a href="index.html#services" data-i18n="nav.services">Services</a>
+                <a href="index.html#contact" data-i18n="nav.contact">Contact</a>
+            </nav>
+            <div class="lang-switch" aria-label="Language switcher">
+                <button class="lang-toggle" type="button" data-lang="en" aria-label="English">EN</button>
+                <button class="lang-toggle" type="button" data-lang="de" aria-label="Deutsch">DE</button>
+            </div>
         </div>
     </header>
 
@@ -30,35 +31,50 @@
         <section class="impressum-box">
             <div class="container">
                 <h1>Impressum</h1><br>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, doloremque? Hic esse veritatis nemo eius necessitatibus quae tenetur, molestias sit debitis quia corporis nulla consectetur, voluptates odio pariatur, exercitationem cum.</p><br>
-                <h4>Lorem ipsum dolor sit amet.</h4><br>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum nesciunt ea, eum esse numquam repellendus!</p><br>
-                <h1>Lorem ipsum dolor sit amet consectetur.</h1>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus inventore ut adipisci recusandae impedit nulla laboriosam quos exercitationem assumenda cum dignissimos iure provident mollitia perferendis qui distinctio, eaque nihil nobis.</p>
+                <p>Diese Website wird von Slavica Ivancevic betrieben. Sie dient zur Präsentation von Projekten, Arbeiten und Kontaktdaten.</p><br>
+
+                <h4>Verantwortlich für den Inhalt</h4><br>
+                <p>Slavica Ivancevic<br>
+                Telefon: +43 660 7722 169<br>
+                E-Mail: office@ivancevicweb.com</p><br>
+
+                <h4>Adresse</h4><br>
+                <p>Österreich<br>
+                Wien / Österreich</p><br>
+
+                <h4>Umsatzsteuer- und Unternehmensdaten</h4><br>
+                <p>Die Website ist nicht als kommerzielle Unternehmenspräsenz im Sinne eines Gewerbebetriebes konzipiert, sondern dient als persönliche Portfolio- und Kontaktseite.</p><br>
+
+                <h4>Haftungsausschluss</h4><br>
+                <p>Die Inhalte dieser Website wurden mit größtmöglicher Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann jedoch keine Gewähr übernommen werden. Für Schäden, die durch die Nutzung dieser Website entstehen, haftet der Betreiber nicht.</p><br>
+
+                <h4>Urheberrecht</h4><br>
+                <p>Die auf dieser Website veröffentlichten Inhalte, Bilder, Texte und sonstigen Materialien sind, soweit nicht anders gekennzeichnet, Eigentum von Slavica Ivancevic. Ein unbefugtes Kopieren oder Verwenden ist nicht gestattet.</p><br>
+
+                <h4>Kontakt</h4><br>
+                <p>Für Anfragen, Projekte oder sonstige Anliegen erreichen Sie mich über die angegebene Telefonnummer oder E-Mail-Adresse.</p>
             </div>
         </section>
     </main>
     
-    <footer>
-        <div class="container">
-            <div class="bottom">
-                <div class="contact-details">
-                    <span>Telefon:+4366012345678</span>
-                    <span>E-Mail:slavicarabrenovic@yahoo.com</span>
-                </div>
-                <div class="socials">
-                    <a href="https://at.linkedin.com/in/slavica-ivancevic-799033295"><i class="fa-brands fa-linkedin fa-2x"></i></a>
-                    <a href="https://github.com/slavicarab"><i class="fa-brands fa-github fa-2x"></i></a>
-                    <i class="fa-brands fa-instagram fa-2x"></i>
-                </div>
-                <div class="impressum">
-                    <a href="impressum.html">Impressum</a>
-                    <a href="dataprotection.html">Dataprotection</a>
-                </div>
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div>
+                <p><strong>Telefon</strong><br>+43 660 7722 169</p>
+                <p><strong>E-Mail</strong><br>office@ivancevicweb.com</p>
+            </div>
+            <div class="socials">
+                <a href="https://at.linkedin.com/in/slavica-ivancevic-799033295" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/slavicarab" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <div class="footer-links">
+                <a href="impressum.html" data-i18n="footer.impressum">Impressum</a>
+                <a href="dataprotection.html" data-i18n="footer.privacy">Dataprotection</a>
             </div>
         </div>
     </footer>
 
-    
+    <script src="lang.js"></script>
 </body>
 </html>

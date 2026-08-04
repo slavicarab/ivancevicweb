@@ -1,0 +1,44 @@
+Name: Test User
+Email: test@example.com
+Message: Hello from verification
+---
+Name: caca caca
+Email: caca@yahoo.com
+Message: vbc
+---
+Name: caca caca
+Email: cac@yahoo.com
+Message: cvb
+---
+Name: caca caca
+Email: caca@yahoo.com
+Message: cvb
+---
+Name: caca caca
+Email: caca@yahoo.com
+Message: vcx
+---
+Name: caca caca
+Email: caca@yahoo.com
+Message: cvb
+---
+Name: Console Test
+Email: console@example.com
+Message: Testiram slanje emaila iz konzole
+---
+Name: Console Test
+Email: console@example.com
+Message: Testiram slanje emaila iz konzole
+---
+Name: Console Test
+Email: console@example.com
+Message: Testiram slanje emaila iz konzole
+---
+Name: Console Test
+Email: console@example.com
+Message: Testiram slanje emaila iz konzole
+---
+Name: Console Test
+Email: console@example.com
+Message: Testiram slanje emaila iz konzole
+---

@@ -1,122 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My portfolio</title>
+    <title>Slavica Ivancevic | Modern Portfolio</title>
+    <meta name="description" content="Modern portfolio website for Slavica Ivancevic featuring services, skills, and contact information.">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Doto:wght@100..900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Doto:wght@100..900&display=swap" rel="stylesheet">
 </head>
-
 <body>
-
-    <header>
-        <div class="container">
-            <div class="top">  
-                <h1>Ivancevic Slavica</h1>
-
-                <ul class="nav">
-                    <li><a href="#info">About</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>    
-                </ul>
-
-            </div>   
+    <header class="site-header">
+        <div class="container nav-wrap">
+            <a class="brand" href="#top">Slavica Ivancevic</a>
+            <nav class="nav" aria-label="Main navigation">
+                <a href="#about" data-i18n="nav.about">About</a>
+                <a href="#services" data-i18n="nav.services">Services</a>
+                <a href="#contact" data-i18n="nav.contact">Contact</a>
+            </nav>
+            <div class="lang-switch" aria-label="Language switcher">
+                <button class="lang-toggle" type="button" data-lang="en" aria-label="English">EN</button>
+                <button class="lang-toggle" type="button" data-lang="de" aria-label="Deutsch">DE</button>
+            </div>
         </div>
     </header>
 
-    <main>
+    <main id="top">
         <section class="hero">
-        <div class="container">
-                <div class="hero-box">
-                    <img src="_DSC4470.png">
-                    <div class="hero-text">
-                        <h1> I'm a Web Developer</h1>
-                        <a href="CV_Slavica Ivancevic_E_coordinator.pdf" download="CV_Slavica.pdf"><button>Download CV</button></a>
+            <div class="container hero-grid">
+                <div class="hero-copy">
+                    <p class="eyebrow" data-i18n="hero.eyebrow"> • Web Development • Digital Solutions</p>
+                    <h1 data-i18n="hero.title">I build practical web applications and digital solutions for small businesses.</h1>
+                    <p data-i18n="hero.text">From responsive websites and custom management tools to educational platforms and workflow automation, I turn ideas into clear, reliable, and user-friendly digital products.</p>
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="projects.html" data-i18n="hero.button.primary">View my Projects</a>
+                        <a class="btn btn-secondary" href="#contact" data-i18n="hero.button.secondary">Discuss your Project</a>
                     </div>
                 </div>
-        </div>
-        </section>
-        <section class="info" id="info">
-            <div class="container">
-                <div class="info-box">
-                    <div class="card">
-                        <i class="fa-solid fa-gears fa-2x"></i>
-                        <h3>Frameworks</h3>
-                        <ul>
-                            <li>React</li>
-                            <li>Vue</li>
-                            <li>Angular</li>
-                        </ul>
-                       
-                    </div>
-                    <div class="card">
-                        <i class="fa-solid fa-code fa-2x"></i>
-                        <h3>Programme languages</h3>
-                        <ul>
-                            <li>HTML</li>
-                            <li>CSS</li>
-                            <li>Java Script</li>
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <i class="fa-solid fa-cubes fa-2x"></i>
-                        <h3>DevOps</h3>
-                        <ul>
-                            <li>GIT</li>
-                            <li>Docker</li>
-                            <li>Agile</li>
-                        </ul>
-                    </div>
+                <div class="hero-card">
+                    <img src="_DSC4470.jpg" alt="Slavica Ivancevic">
+                    <h3 data-i18n="hero.card.title">Current focus</h3>
+                    <p data-i18n="hero.card.text">Building modern digital solutions with a strong focus on user experience, clear structure, and thoughtful implementation.</p>
                 </div>
             </div>
         </section>
+
+        <section class="about" id="about">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow" data-i18n="about.eyebrow">About me</p>
+                </div>
+
+                <div class="about-card">
+                    <h3 data-i18n="about.card1.title">Who I am</h3>
+                    <p data-i18n="about.title">I am a web developer and project coordinator with a background in education and business administration. I create websites, web applications, and digital tools that simplify everyday work, improve communication, and support learning. My experience in coordinating educational programs helps me understand both technical requirements and the needs of real users.</p>
+                </div>
+
+                <div class="skills-grid">
+                    <article class="skill-card">
+                        <h4 data-i18n="skills.frontend.title">Frontend</h4>
+                        <p data-i18n="skills.frontend.text">HTML5, CSS3, JavaScript, React, Responsive Design</p>
+                    </article>
+                    <article class="skill-card">
+                        <h4 data-i18n="skills.backend.title">Backend and Databases</h4>
+                        <p data-i18n="skills.backend.text">Node.js, Express, MongoDB, REST APIs</p>
+                    </article>
+                    <article class="skill-card">
+                        <h4 data-i18n="skills.business.title">Business and Project Tools</h4>
+                        <p data-i18n="skills.business.text">Odoo, Project Coordination, Process Improvement</p>
+                    </article>
+                    <article class="skill-card">
+                        <h4 data-i18n="skills.education.title">Educational Technology</h4>
+                        <p data-i18n="skills.education.text">Learning Platforms, Course Management, Digital Teaching Tools</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects" id="services">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow" data-i18n="services.eyebrow">Services</p>
+                    <h2 data-i18n="services.title">Professional support for modern digital solutions.</h2>
+                </div>
+                <div class="project-grid">
+                    <article class="project-card">
+                        <a href="https://www.ivancevicart.com/en/" target="_blank" rel="noopener noreferrer" aria-label="Open Ivancevic Art website">
+                            <img src="screenshot_website.png" alt="Modern website preview">
+                        </a>
+                        <h3 data-i18n="services.card1.title">Modern Website Development</h3>
+                        <p data-i18n="services.card1.text">Responsive, modern websites for small businesses, educational organizations, and independent professionals. I focus on clear structure, user-friendly design, multilingual content, and reliable performance.</p>
+                        <a href="#contact" data-i18n="services.link">Book a consultation</a>
+                    </article>
+                    <article class="project-card">
+                        <a href="https://tutor-notebook.ivancevicweb.com/" target="_blank" rel="noopener noreferrer" aria-label="Open Tutor Notebook React website">
+                            <img src="screenshot_app.png" alt="Web application preview">
+                        </a>
+                        <h3 data-i18n="services.card2.title">Custom Web Applications</h3>
+                        <p data-i18n="services.card2.text">Practical web applications tailored to your workflow, including customer portals, administration systems, booking tools, content management solutions, and educational platforms.</p>
+                        <a href="#contact" data-i18n="services.link">Book a consultation</a>
+                    </article>
+                    <article class="project-card">
+                        <a href="https://tutornotebook.ivancevicweb.com/" target="_blank" rel="noopener noreferrer" aria-label="Open Tutor Notebook website">
+                            <img src="tutor_notebook_java.png" alt="Tutor Notebook Java application preview">
+                        </a>
+                        <h3 data-i18n="services.card3.title">Digital Process Solutions</h3>
+                        <p data-i18n="services.card3.text">Support with Odoo, database organization, workflow automation, project coordination, and the digitalization of administrative or educational processes.</p>
+                        <a href="#contact" data-i18n="services.link">Book a consultation</a>
+                    </article>
+                    <article class="project-card">
+                        <img src="https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg" alt="Mobile application preview">
+                        <h3 data-i18n="services.card4.title">Mobile Applications</h3>
+                        <p data-i18n="services.card4.text">Cross-platform mobile applications developed with React Native and Expo for educational content, internal tools, and customer-facing services.</p>
+                        <a href="#contact" data-i18n="services.link">Book a consultation</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
         <section class="contact" id="contact">
-                <div class="container-contact">
-                    <div class="contact-box">
-                        <h1>Get in touch</h1>
-                        <p>Fill out the form below and we'll get back to you as soon as possible.</p>
-                    </div>
-                    <form class="contact-form">
-                        <label for="name">First name:</label><br>
-                        <input type="text" id="fname"><br>
-                        <label for="name">Last name:</label><br>
-                        <input type="text" id="Lname"><br>
-                        <label for="email">E-mail:</label><br>
-                        <input type="text" id="email"><br>
-                        <label for="message">Message:</label><br>
-                        <input type="text" id="message"><br>
-                        <button class="form-submit" type="submit">Send Message</button>     
-                    </form>        
+            <div class="container contact-grid">
+                <div class="contact-card">
+                    <p class="eyebrow" data-i18n="contact.eyebrow">Let’s connect</p>
+                    <h2 data-i18n="contact.title">Have a website, application, or digital workflow in mind?</h2>
+                    <p data-i18n="contact.text">Please contact me directly by phone or email.</p>
                 </div>
-        </section>
-
-        <footer>
-            <div class="container">
-                <div class="bottom">
-                    <div class="contact-details">
-                        <span>Telefon:+4366012345678</span>
-                        <span>E-Mail:slavicarabrenovic@yahoo.com</span>
-                    </div>
-                    <div class="socials">
-                        <a href="https://at.linkedin.com/in/slavica-ivancevic-799033295"><i class="fa-brands fa-linkedin fa-2x"></i></a>
-                        <a href="https://github.com/slavicarab"><i class="fa-brands fa-github fa-2x"></i></a>
-                        <i class="fa-brands fa-instagram fa-2x"></i>
-                    </div>
-                    <div class="impressum">
-                        <a href="impressum.html">Impressum</a>
-                        <a href="dataprotection.html">Dataprotection</a>
-                    </div>
+                <div class="contact-details" aria-label="Contact details">
+                    <a class="contact-link" href="tel:+436607722169">
+                        <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                        <span><strong data-i18n="footer.phone">Phone</strong>+43 660 7722169</span>
+                    </a>
+                    <a class="contact-link" href="mailto:office@ivancevicweb.com">
+                        <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                        <span><strong data-i18n="footer.email">Email</strong>office@ivancevicweb.com</span>
+                    </a>
                 </div>
             </div>
-        </footer>
+        </section>
+    </main>
 
-    
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div>
+                <p><strong data-i18n="footer.phone">Phone</strong><br>+43 660 7722169</p>
+                <p><strong data-i18n="footer.email">Email</strong><br>office@ivancevicweb.com</p>
+            </div>
+            <div class="socials">
+                <a href="https://at.linkedin.com/in/slavica-ivancevic-799033295" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/slavicarab" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <div class="footer-links">
+                <a href="impressum.html" data-i18n="footer.impressum">Impressum</a>
+                <a href="dataprotection.html" data-i18n="footer.privacy">Dataprotection</a>
+            </div>
+        </div>
+    </footer>
+    <script src="lang.js"></script>
 </body>
-
 </html>

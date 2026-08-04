@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dataprotection</title>
+    <title>Privacy Policy</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,54 +11,65 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Doto:wght@100..900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 
-<body>
-    <header>
-        <div class="container">
-            <div class="top">  
-                <h1>Ivancevic Slavica</h1>
-
-                <ul class="nav">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="projects.html">Projects</a></li>    
-                </ul>
-
-            </div>   
+<body data-page="privacy">
+    <header class="site-header">
+        <div class="container nav-wrap">
+            <a class="brand" href="index.html">Slavica Ivancevic</a>
+            <nav class="nav" aria-label="Main navigation">
+                <a href="index.html#about" data-i18n="nav.about">About</a>
+                <a href="index.html#services" data-i18n="nav.services">Services</a>
+                <a href="index.html#contact" data-i18n="nav.contact">Contact</a>
+            </nav>
+            <div class="lang-switch" aria-label="Language switcher">
+                <button class="lang-toggle" type="button" data-lang="en" aria-label="English">EN</button>
+                <button class="lang-toggle" type="button" data-lang="de" aria-label="Deutsch">DE</button>
+            </div>
         </div>
     </header>
 
     <main>
         <section class="data-box">
             <div class="container">
-                <h1>Impressum</h1><br>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, doloremque? Hic esse veritatis nemo eius necessitatibus quae tenetur, molestias sit debitis quia corporis nulla consectetur, voluptates odio pariatur, exercitationem cum.</p><br>
-                <h4>Lorem ipsum dolor sit amet.</h4><br>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum nesciunt ea, eum esse numquam repellendus!</p><br>
-                <h1>Lorem ipsum dolor sit amet consectetur.</h1>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus inventore ut adipisci recusandae impedit nulla laboriosam quos exercitationem assumenda cum dignissimos iure provident mollitia perferendis qui distinctio, eaque nihil nobis.</p>
+                <h1 data-i18n="privacy.title">Privacy Policy</h1><br>
+                <p data-i18n="privacy.intro">This website does not use Google Analytics, tracking cookies, contact forms, newsletters, or visitor analytics. No personal visitor data is intentionally collected through this website.</p><br>
+
+                <h4 data-i18n="privacy.noTrackingTitle">No analytics or tracking</h4><br>
+                <p data-i18n="privacy.noTrackingText">No analytics tools are used. The website does not create user profiles and does not use marketing or tracking technologies.</p><br>
+
+                <h4 data-i18n="privacy.contactTitle">Contact by phone or email</h4><br>
+                <p data-i18n="privacy.contactText">If you contact me voluntarily by phone or email, the information you provide will be used only to respond to your request. This data is not shared with third parties unless required by law.</p><br>
+
+                <h4 data-i18n="privacy.hostingTitle">Technical operation</h4><br>
+                <p data-i18n="privacy.hostingText">When a website is opened, basic technical access data may be processed by the hosting provider to deliver the page securely and reliably. This website operator does not evaluate this data for visitor tracking.</p><br>
+
+                <h4 data-i18n="privacy.rightsTitle">Your rights</h4><br>
+                <p data-i18n="privacy.rightsText">You may request information, correction, or deletion of personal data that may exist because you contacted me directly.</p><br>
+
+                <h4 data-i18n="privacy.controllerTitle">Contact</h4><br>
+                <p><span data-i18n="privacy.controllerText">For privacy questions, please contact:</span><br>
+                E-Mail: office@ivancevicweb.com</p>
             </div>
         </section>
     </main>
-    
-    <footer>
-        <div class="container">
-            <div class="bottom">
-                <div class="contact-details">
-                    <span>Telefon:+4366012345678</span>
-                    <span>E-Mail:slavicarabrenovic@yahoo.com</span>
-                </div>
-                <div class="socials">
-                    <a href="https://at.linkedin.com/in/slavica-ivancevic-799033295"><i class="fa-brands fa-linkedin fa-2x"></i></a>
-                    <a href="https://github.com/slavicarab"><i class="fa-brands fa-github fa-2x"></i></a>
-                    <i class="fa-brands fa-instagram fa-2x"></i>
-                </div>
-                <div class="impressum">
-                    <a href="impressum.html">Impressum</a>
-                    <a href="dataprotection.html">Dataprotection</a>
-                </div>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div>
+                <p><strong data-i18n="footer.phone">Phone</strong><br>+43 660 7722 169</p>
+                <p><strong data-i18n="footer.email">Email</strong><br>office@ivancevicweb.com</p>
+            </div>
+            <div class="socials">
+                <a href="https://at.linkedin.com/in/slavica-ivancevic-799033295" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/slavicarab" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <div class="footer-links">
+                <a href="impressum.html" data-i18n="footer.impressum">Impressum</a>
+                <a href="dataprotection.html" data-i18n="footer.privacy">Privacy Policy</a>
             </div>
         </div>
     </footer>
 
-    
+    <script src="lang.js"></script>
 </body>
 </html>

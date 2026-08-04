@@ -1,106 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects</title>
+    <title>Services | Slavica Ivancevic</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Doto:wght@100..900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Doto:wght@100..900&display=swap" rel="stylesheet">
 </head>
-
 <body>
-
-    <header>
-        <div class="container">
-            <div class="top">  
-                <h1>Ivancevic Slavica</h1>
-
-                <ul class="nav">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="#">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>    
-                </ul>
-
-            </div>   
+    <header class="site-header">
+        <div class="container nav-wrap">
+            <a class="brand" href="index.html">Slavica Ivancevic</a>
+            <nav class="nav" aria-label="Main navigation">
+                <a href="index.html#about" data-i18n="nav.about">About</a>
+                <a href="#top" data-i18n="nav.services">Services</a>
+                <a href="index.html#contact" data-i18n="nav.contact">Contact</a>
+            </nav>
+            <div class="lang-switch" aria-label="Language switcher">
+                <button class="lang-toggle" type="button" data-lang="en" aria-label="English">EN</button>
+                <button class="lang-toggle" type="button" data-lang="de" aria-label="Deutsch">DE</button>
+            </div>
         </div>
     </header>
-    <main>
-    
-        <section>
-            <div class="container-project">
-                <div class="project">
-                    <img src="ai-generated-8775232_640.png" alt="ai">
-                    <h3>Lorem ipsum dolor sit</h3>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.Delectus vel maxime, nostrum quo totam illum dolores iusto non obcaecati unde omnis officia vitae rem sunt eaque. Nihil maxime voluptatibus iste. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi quas nostrum quasi, amet nemo in.</p>
-                    <a href="#">Read more</a>
+
+    <main id="top">
+        <section class="projects">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow" data-i18n="projects.eyebrow">Services</p>
+                    <h2 data-i18n="projects.title">Offering modern digital solutions tailored to your needs.</h2>
+                    <p data-i18n="projects.text">From elegant websites to web applications, mobile app support, and strategic IT consulting, I help turn ideas into practical digital results.</p>
                 </div>
-                <div class="project">
-                    <img src="programmer-3607627_640.png" alt="programmer">
-                    <h3>Lorem ipsum dolor sit</h3>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus vel maxime, nostrum quo totam illum dolores iusto non obcaecati unde omnis officia vitae rem sunt eaque. Nihil maxime voluptatibus iste. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, veniam voluptatibus voluptatum distinctio et vero.</p>
-                    <a href="#">Read more</a>
-                    
+                <div class="project-grid">
+                    <article class="project-card">
+                        <a href="https://www.ivancevicart.com/en/" target="_blank" rel="noopener noreferrer" aria-label="Open Ivancevic Art website">
+                            <img src="screenshot_website.png" alt="Modern website preview">
+                        </a>
+                        <h3 data-i18n="projects.card1.title">Modern Website Development</h3>
+                        <p data-i18n="projects.card1.text">Clean, responsive, and modern websites built to represent your business clearly online.</p>
+                    </article>
+                    <article class="project-card">
+                        <a href="https://tutor-notebook.ivancevicweb.com/" target="_blank" rel="noopener noreferrer" aria-label="Open Tutor Notebook React website">
+                            <img src="screenshot_app.png" alt="Web application preview">
+                        </a>
+                        <h3 data-i18n="projects.card2.title">Web & Mobile App Development</h3>
+                        <p data-i18n="projects.card2.text">Custom web and mobile applications focused on usability, performance, and business efficiency.</p>
+                    </article>
+                    <article class="project-card">
+                        <a href="https://tutornotebook.ivancevicweb.com/" target="_blank" rel="noopener noreferrer" aria-label="Open Tutor Notebook website">
+                            <img src="tutor_notebook_java.png" alt="Tutor Notebook Java application preview">
+                        </a>
+                        <h3 data-i18n="projects.card3.title">IT Consulting & Creative Solutions</h3>
+                        <p data-i18n="projects.card3.text">Practical guidance and thoughtful ideas for digital strategy, implementation, and growth.</p>
+                    </article>
                 </div>
-                <div class="project">
-                    <img src="programmer-4431280_640.png" alt="developer">
-                    <h3>Lorem ipsum dolor sit</h3>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus vel maxime, nostrum quo totam illum dolores iusto non obcaecati unde omnis officia vitae rem sunt eaque. Nihil maxime voluptatibus iste. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit vitae praesentium odio est, aspernatur quo!</p>
-                    <a href="#">Read more</a>
-                </div>
-                <div class="project">
-                    <img src="code-geek-2680204_640.png" alt="geek">
-                    <h3>Lorem ipsum dolor sit</h3>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus vel maxime, nostrum quo totam illum dolores iusto non obcaecati unde omnis officia vitae rem sunt eaque. Nihil maxime voluptatibus iste. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas repellat suscipit ea ab nostrum tempora. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, itaque.</p>
-                    <a href="#">Read more</a>
-                </div>
-            </div>
-        </section>
-        <section class="contact" id="contact">
-            <div class="container-contact">
-                <div class="contact-box">
-                    <h1>Get in touch</h1>
-                    <p>Fill out the form below and we'll get back to you as soon as possible.</p>
-                </div>
-                <form class="contact-form">
-                    <label for="name">First name:</label><br>
-                    <input type="text" id="fname"><br>
-                    <label for="name">Last name:</label><br>
-                    <input type="text" id="Lname"><br>
-                    <label for="email">E-mail:</label><br>
-                    <input type="text" id="email"><br>
-                    <label for="message">Message:</label><br>
-                    <input type="text" id="message"><br>
-                    <button class="form-submit" type="submit">Send Message</button>     
-                </form>        
             </div>
         </section>
     </main>
-    <footer>
-        <div class="container">
-            <div class="bottom">
-                <div class="contact-details">
-                    <span>Telefon:+4366012345678</span>
-                    <span>E-Mail:slavicarabrenovic@yahoo.com</span>
-                </div>
-                <div class="socials">
-                    <a href="https://at.linkedin.com/in/slavica-ivancevic-799033295"><i class="fa-brands fa-linkedin fa-2x"></i></a>
-                    <a href="https://github.com/slavicarab"><i class="fa-brands fa-github fa-2x"></i></a>
-                    <i class="fa-brands fa-instagram fa-2x"></i>
-                </div>
-                <div class="impressum">
-                    <a href="impressum.html">Impressum</a>
-                    <a href="dataprotection.html">Dataprotection</a>
-                </div>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div>
+                <p><strong data-i18n="footer.phone">Phone</strong><br>+43 660 7722169</p>
+                <p><strong data-i18n="footer.email">Email</strong><br>office@ivancevicweb.com</p>
+            </div>
+            <div class="socials">
+                <a href="https://at.linkedin.com/in/slavica-ivancevic-799033295" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/slavicarab" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <div class="footer-links">
+                <a href="impressum.html" data-i18n="footer.impressum">Impressum</a>
+                <a href="dataprotection.html" data-i18n="footer.privacy">Dataprotection</a>
             </div>
         </div>
     </footer>
-
-
+    <script src="lang.js"></script>
 </body>
-
 </html>
