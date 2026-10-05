@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ivancevic Web | Digitale Lösungen für kleine Unternehmen</title>
     <meta name="description" content="Websites, Automatisierung und individuelle Softwarelösungen für kleine Unternehmen in Österreich.">
+    <link rel="icon" href="data:,">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,8 +17,12 @@
         <div class="container nav-wrap">
             <a class="brand" href="#top">Ivancevic Web</a>
             <nav class="nav" aria-label="Main navigation">
+                <a href="#ueber-uns" data-i18n="nav.about">Über uns</a>
                 <a href="#leistungen" data-i18n="nav.services">Leistungen</a>
-                <a href="#contact" data-i18n="nav.contact">Kontakt</a>
+                <a href="#loesungen" data-i18n="nav.solutions">Lösungen</a>
+                <a href="#projekte" data-i18n="nav.projects">Projekte</a>
+                <a href="#preise" data-i18n="nav.pricing">Preise</a>
+                <a href="#kontakt" data-i18n="nav.contact">Kontakt</a>
             </nav>
             <div class="lang-switch" aria-label="Language switcher">
                 <button class="lang-toggle" type="button" data-lang="en" aria-label="English">EN</button>
@@ -34,7 +39,7 @@
                     <h1 data-i18n="hero.title">Digitale Lösungen für kleine Unternehmen</h1>
                     <p data-i18n="hero.text">Websites, Automatisierung und individuelle Softwarelösungen für Unternehmen in Österreich.</p>
                     <div class="hero-actions">
-                        <a class="btn btn-primary" href="#contact" data-i18n="hero.button.primary">Kostenloses Erstgespräch</a>
+                        <a class="btn btn-primary contact-topic-link" href="#kontakt" data-contact-topic="Sonstiges / Noch nicht sicher" data-i18n="hero.button.primary">Kostenloses Erstgespräch</a>
                         <a class="btn btn-secondary" href="#leistungen" data-i18n="hero.button.secondary">Unsere Leistungen</a>
                     </div>
                 </div>
@@ -49,33 +54,50 @@
             </div>
         </section>
 
-        <section class="about" id="about">
+        <section class="about" id="ueber-uns">
             <div class="container">
-                <div class="section-heading">
-                    <p class="eyebrow" data-i18n="about.eyebrow">About me</p>
+                <div class="about-grid">
+                    <aside class="about-person-card" aria-label="Ihre Ansprechpartnerin">
+                        <img src="slavica-portrait-enhanced.png" alt="Slavica Ivancevic, Ihre Ansprechpartnerin bei Ivancevic Web" loading="lazy">
+                        <div>
+                            <h3>Slavica Ivancevic</h3>
+                            <p data-i18n="about.person.role">Ihre Ansprechpartnerin</p>
+                        </div>
+                    </aside>
+                    <div class="about-content">
+                        <p class="eyebrow" data-i18n="about.eyebrow">Über uns</p>
+                        <h2 data-i18n="about.title">Persönlich. Digital. Lösungsorientiert.</h2>
+                        <div class="about-text">
+                            <p data-i18n="about.text1">Wir unterstützen kleine Unternehmen und Selbstständige dabei, digitale Lösungen sinnvoll und unkompliziert einzusetzen.</p>
+                            <p data-i18n="about.text2">Dabei geht es uns nicht darum, möglichst viel Technik einzusetzen, sondern die passende Lösung für die tatsächlichen Anforderungen eines Unternehmens zu finden – von einer professionellen Website über die Automatisierung wiederkehrender Aufgaben bis hin zu individuellen Web- und Softwarelösungen.</p>
+                            <p data-i18n="about.text3">Als kleines Unternehmen legen wir besonderen Wert auf persönlichen Kontakt, verständliche Beratung und transparente Zusammenarbeit. Bei uns gibt es keine komplizierten Agenturstrukturen und keinen unnötigen IT-Jargon.</p>
+                            <p data-i18n="about.text4">Sie erzählen uns, was Sie erreichen möchten oder wo im Arbeitsalltag ein Problem besteht. Wir kümmern uns darum, daraus eine passende digitale Lösung zu entwickeln.</p>
+                        </div>
+                        <p class="about-statement" data-i18n="about.statement">Persönlich betreut. Verständlich erklärt. Individuell umgesetzt.</p>
+                        <a class="btn btn-secondary contact-topic-link" href="#kontakt" data-contact-topic="Sonstiges / Noch nicht sicher" data-i18n="about.cta">Unverbindlich kennenlernen</a>
+                    </div>
                 </div>
 
-                <div class="about-card">
-                    <h3 data-i18n="about.card1.title">Who I am</h3>
-                    <p data-i18n="about.title">I am a web developer and project coordinator with a background in education and business administration. I create websites, web applications, and digital tools that simplify everyday work, improve communication, and support learning. My experience in coordinating educational programs helps me understand both technical requirements and the needs of real users.</p>
-                </div>
-
-                <div class="skills-grid">
-                    <article class="skill-card">
-                        <h4 data-i18n="skills.frontend.title">Frontend</h4>
-                        <p data-i18n="skills.frontend.text">HTML5, CSS3, JavaScript, React, Responsive Design</p>
+                <div class="values-grid">
+                    <article class="value-card">
+                        <span class="value-icon" aria-hidden="true"><i class="fa-solid fa-handshake"></i></span>
+                        <h3 data-i18n="about.value1.title">Persönliche Betreuung</h3>
+                        <p data-i18n="about.value1.text">Direkter Kontakt und individuelle Beratung statt anonymer Agenturstrukturen.</p>
                     </article>
-                    <article class="skill-card">
-                        <h4 data-i18n="skills.backend.title">Backend and Databases</h4>
-                        <p data-i18n="skills.backend.text">Node.js, Express, MongoDB, REST APIs</p>
+                    <article class="value-card">
+                        <span class="value-icon" aria-hidden="true"><i class="fa-solid fa-comments"></i></span>
+                        <h3 data-i18n="about.value2.title">Verständliche Kommunikation</h3>
+                        <p data-i18n="about.value2.text">Wir erklären technische Themen klar und ohne unnötigen IT-Jargon.</p>
                     </article>
-                    <article class="skill-card">
-                        <h4 data-i18n="skills.business.title">Business and Project Tools</h4>
-                        <p data-i18n="skills.business.text">Odoo, Project Coordination, Process Improvement</p>
+                    <article class="value-card">
+                        <span class="value-icon" aria-hidden="true"><i class="fa-solid fa-sliders"></i></span>
+                        <h3 data-i18n="about.value3.title">Lösungen nach Bedarf</h3>
+                        <p data-i18n="about.value3.text">Wir empfehlen nicht mehr Technik als tatsächlich benötigt wird.</p>
                     </article>
-                    <article class="skill-card">
-                        <h4 data-i18n="skills.education.title">Educational Technology</h4>
-                        <p data-i18n="skills.education.text">Learning Platforms, Course Management, Digital Teaching Tools</p>
+                    <article class="value-card">
+                        <span class="value-icon" aria-hidden="true"><i class="fa-solid fa-list-check"></i></span>
+                        <h3 data-i18n="about.value4.title">Transparente Zusammenarbeit</h3>
+                        <p data-i18n="about.value4.text">Klare Anforderungen, nachvollziehbare Angebote und offene Kommunikation.</p>
                     </article>
                 </div>
             </div>
@@ -89,87 +111,98 @@
                     <p data-i18n="services.intro">Von der professionellen Website bis zur individuellen Softwarelösung – wir unterstützen kleine Unternehmen dabei, digital professioneller, effizienter und sichtbarer zu werden.</p>
                 </div>
                 <div class="services-grid">
-                    <article class="service-card">
-                        <span class="service-icon" aria-hidden="true"><i class="fa-solid fa-globe"></i></span>
-                        <h3 data-i18n="services.website.title">Website-Erstellung</h3>
-                        <p data-i18n="services.website.text">Moderne, professionelle Websites, die zu Ihrem Unternehmen passen und auf Smartphone, Tablet und Desktop optimal funktionieren.</p>
-                    </article>
-                    <article class="service-card">
-                        <span class="service-icon" aria-hidden="true"><i class="fa-solid fa-screwdriver-wrench"></i></span>
-                        <h3 data-i18n="services.maintenance.title">Website-Wartung &amp; Betreuung</h3>
-                        <p data-i18n="services.maintenance.text">Wir kümmern uns um Updates, Änderungen, Sicherheit und die laufende technische Betreuung Ihrer Website.</p>
-                    </article>
-                    <article class="service-card">
-                        <span class="service-icon" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-chart"></i></span>
-                        <h3 data-i18n="services.seo.title">SEO &amp; Google-Präsenz</h3>
-                        <p data-i18n="services.seo.text">Wir optimieren Ihre Website für Suchmaschinen und helfen dabei, dass Ihr Unternehmen online besser gefunden wird.</p>
-                    </article>
-                    <article class="service-card">
-                        <span class="service-icon" aria-hidden="true"><i class="fa-solid fa-arrows-spin"></i></span>
-                        <h3 data-i18n="services.automation.title">Digitalisierung &amp; Automatisierung</h3>
-                        <p data-i18n="services.automation.text">Wir vereinfachen wiederkehrende Abläufe und helfen Ihnen, manuelle Arbeit durch praktische digitale Lösungen zu reduzieren.</p>
-                    </article>
-                    <article class="service-card">
-                        <span class="service-icon" aria-hidden="true"><i class="fa-solid fa-envelope-open-text"></i></span>
-                        <h3 data-i18n="services.hosting.title">E-Mail, Domain &amp; Hosting</h3>
-                        <p data-i18n="services.hosting.text">Wir unterstützen Sie bei Domain, professionellen E-Mail-Adressen, Hosting und der technischen Einrichtung Ihrer Online-Präsenz.</p>
-                    </article>
-                    <article class="service-card">
-                        <span class="service-icon" aria-hidden="true"><i class="fa-solid fa-gears"></i></span>
-                        <h3 data-i18n="services.software.title">Individuelle Software</h3>
-                        <p data-i18n="services.software.text">Wenn Standardsoftware nicht zu Ihren Abläufen passt, entwickeln wir eine Lösung, die auf die Anforderungen Ihres Unternehmens zugeschnitten ist.</p>
-                    </article>
-                    <article class="service-card">
-                        <span class="service-icon" aria-hidden="true"><i class="fa-solid fa-window-restore"></i></span>
-                        <h3 data-i18n="services.webapps.title">Web-Applikationen</h3>
-                        <p data-i18n="services.webapps.text">Individuelle Web-Anwendungen für interne Abläufe, Kundenportale, Verwaltung, Buchungen oder andere geschäftliche Anforderungen.</p>
-                    </article>
-                    <article class="service-card">
-                        <span class="service-icon" aria-hidden="true"><i class="fa-solid fa-mobile-screen-button"></i></span>
-                        <h3 data-i18n="services.mobile.title">Mobile Apps</h3>
-                        <p data-i18n="services.mobile.text">Individuelle mobile Anwendungen für Unternehmen – von einfachen Geschäftsanwendungen bis zu Lösungen, die bestehende digitale Prozesse ergänzen.</p>
-
-                    </article>
+                    <article class="service-card"><span class="service-icon" aria-hidden="true"><i class="fa-solid fa-globe"></i></span><h3 data-i18n="services.website.title">Website-Erstellung</h3><p data-i18n="services.website.text">Moderne, professionelle Websites, die zu Ihrem Unternehmen passen und auf Smartphone, Tablet und Desktop optimal funktionieren.</p></article>
+                    <article class="service-card"><span class="service-icon" aria-hidden="true"><i class="fa-solid fa-screwdriver-wrench"></i></span><h3 data-i18n="services.maintenance.title">Website-Wartung &amp; Betreuung</h3><p data-i18n="services.maintenance.text">Wir kümmern uns um Updates, Änderungen, Sicherheit und die laufende technische Betreuung Ihrer Website.</p></article>
+                    <article class="service-card"><span class="service-icon" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-chart"></i></span><h3 data-i18n="services.seo.title">SEO &amp; Google-Präsenz</h3><p data-i18n="services.seo.text">Wir optimieren Ihre Website für Suchmaschinen und helfen dabei, dass Ihr Unternehmen online besser gefunden wird.</p></article>
+                    <article class="service-card"><span class="service-icon" aria-hidden="true"><i class="fa-solid fa-arrows-spin"></i></span><h3 data-i18n="services.automation.title">Digitalisierung &amp; Automatisierung</h3><p data-i18n="services.automation.text">Wir vereinfachen wiederkehrende Abläufe und helfen Ihnen, manuelle Arbeit durch praktische digitale Lösungen zu reduzieren.</p></article>
+                    <article class="service-card"><span class="service-icon" aria-hidden="true"><i class="fa-solid fa-envelope-open-text"></i></span><h3 data-i18n="services.hosting.title">E-Mail, Domain &amp; Hosting</h3><p data-i18n="services.hosting.text">Wir unterstützen Sie bei Domain, professionellen E-Mail-Adressen, Hosting und der technischen Einrichtung Ihrer Online-Präsenz.</p></article>
+                    <article class="service-card"><span class="service-icon" aria-hidden="true"><i class="fa-solid fa-gears"></i></span><h3 data-i18n="services.software.title">Individuelle Software</h3><p data-i18n="services.software.text">Wenn Standardsoftware nicht zu Ihren Abläufen passt, entwickeln wir eine Lösung, die auf die Anforderungen Ihres Unternehmens zugeschnitten ist.</p></article>
+                    <article class="service-card"><span class="service-icon" aria-hidden="true"><i class="fa-solid fa-window-restore"></i></span><h3 data-i18n="services.webapps.title">Web-Applikationen</h3><p data-i18n="services.webapps.text">Individuelle Web-Anwendungen für interne Abläufe, Kundenportale, Verwaltung, Buchungen oder andere geschäftliche Anforderungen.</p></article>
+                    <article class="service-card"><span class="service-icon" aria-hidden="true"><i class="fa-solid fa-mobile-screen-button"></i></span><h3 data-i18n="services.mobile.title">Mobile Apps</h3><p data-i18n="services.mobile.text">Individuelle mobile Anwendungen für Unternehmen – von einfachen Geschäftsanwendungen bis zu Lösungen, die bestehende digitale Prozesse ergänzen.</p></article>
                 </div>
             </div>
         </section>
 
-        <section class="contact" id="contact">
-            <div class="container contact-grid">
-                <div class="contact-card">
-                    <p class="eyebrow" data-i18n="contact.eyebrow">Let’s connect</p>
-                    <h2 data-i18n="contact.title">Have a website, application, or digital workflow in mind?</h2>
-                    <p data-i18n="contact.text">Please contact me directly by phone or email.</p>
+        <section class="solutions" id="loesungen">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow" data-i18n="solutions.eyebrow">Lösungen</p>
+                    <h2 data-i18n="solutions.title">Lösungen für Ihr Unternehmen</h2>
+                    <p data-i18n="solutions.intro">Technologie sollte Ihre Arbeit einfacher machen – nicht komplizierter. Wir entwickeln praktische digitale Lösungen für typische Herausforderungen kleiner Unternehmen.</p>
                 </div>
-                <div class="contact-details" aria-label="Contact details">
-                    <a class="contact-link" href="tel:+436607722169">
-                        <i class="fa-solid fa-phone" aria-hidden="true"></i>
-                        <span><strong data-i18n="footer.phone">Phone</strong>+43 660 7722169</span>
-                    </a>
-                    <a class="contact-link" href="mailto:office@ivancevicweb.com">
-                        <i class="fa-solid fa-envelope" aria-hidden="true"></i>
-                        <span><strong data-i18n="footer.email">Email</strong>office@ivancevicweb.com</span>
-                    </a>
+                <div class="solutions-list">
+                    <article class="solution-card"><span class="solution-icon" aria-hidden="true"><i class="fa-solid fa-window-maximize"></i></span><div class="solution-problem"><h3 data-i18n="solutions.website.title">Ihre Website ist veraltet?</h3><p data-i18n="solutions.website.problem">Eine veraltete Website wirkt unprofessionell, funktioniert auf Smartphones möglicherweise nicht optimal und kann potenzielle Kunden abschrecken.</p></div><div class="solution-answer"><p class="solution-label" data-i18n="solutions.label">Unsere Lösung</p><p data-i18n="solutions.website.solution">Wir modernisieren Ihre bestehende Website oder entwickeln einen neuen professionellen Webauftritt, der zu Ihrem Unternehmen passt und auf allen Geräten optimal funktioniert.</p><ul class="solution-benefits"><li data-i18n="solutions.website.benefit1">Moderner professioneller Auftritt</li><li data-i18n="solutions.website.benefit2">Optimiert für Smartphone und Tablet</li><li data-i18n="solutions.website.benefit3">Klare Darstellung Ihrer Leistungen</li></ul><a class="btn btn-secondary contact-topic-link" href="#kontakt" data-contact-topic="Website-Redesign" data-i18n="solutions.website.cta">Website modernisieren</a></div></article>
+                    <article class="solution-card"><span class="solution-icon" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-location"></i></span><div class="solution-problem"><h3 data-i18n="solutions.google.title">Kunden finden Sie nicht bei Google?</h3><p data-i18n="solutions.google.problem">Eine gute Website hilft wenig, wenn potenzielle Kunden sie bei der Suche nach Ihren Leistungen nicht finden.</p></div><div class="solution-answer"><p class="solution-label" data-i18n="solutions.label">Unsere Lösung</p><p data-i18n="solutions.google.solution">Wir optimieren Struktur, Inhalte und technische Grundlagen Ihrer Website, damit Suchmaschinen Ihr Angebot besser verstehen und potenzielle Kunden Sie leichter finden können.</p><ul class="solution-benefits"><li data-i18n="solutions.google.benefit1">SEO-Grundoptimierung</li><li data-i18n="solutions.google.benefit2">Klare Seitenstruktur</li><li data-i18n="solutions.google.benefit3">Lokale Online-Präsenz</li></ul><a class="btn btn-secondary contact-topic-link" href="#kontakt" data-contact-topic="SEO & Google-Präsenz" data-i18n="solutions.google.cta">Sichtbarkeit verbessern</a></div></article>
+                    <article class="solution-card"><span class="solution-icon" aria-hidden="true"><i class="fa-solid fa-diagram-project"></i></span><div class="solution-problem"><h3 data-i18n="solutions.manual.title">Sie erledigen zu viele Aufgaben noch manuell?</h3><p data-i18n="solutions.manual.problem">Wiederkehrende Aufgaben wie E-Mails, Formulare, Dateneingabe oder Dokumentenerstellung kosten jeden Tag Zeit.</p></div><div class="solution-answer"><p class="solution-label" data-i18n="solutions.label">Unsere Lösung</p><p data-i18n="solutions.manual.solution">Wir analysieren wiederkehrende Abläufe und automatisieren dort, wo es sinnvoll ist – damit Sie weniger Zeit mit Routineaufgaben verbringen.</p><ul class="solution-benefits"><li data-i18n="solutions.manual.benefit1">Automatisierte E-Mails</li><li data-i18n="solutions.manual.benefit2">Digitale Formulare</li><li data-i18n="solutions.manual.benefit3">Automatische Dokumentenerstellung</li></ul><a class="btn btn-secondary contact-topic-link" href="#kontakt" data-contact-topic="Digitalisierung & Automatisierung" data-i18n="solutions.manual.cta">Abläufe automatisieren</a></div></article>
+                    <article class="solution-card"><span class="solution-icon" aria-hidden="true"><i class="fa-solid fa-table-columns"></i></span><div class="solution-problem"><h3 data-i18n="solutions.excel.title">Excel und E-Mail reichen für Ihre Abläufe nicht mehr aus?</h3><p data-i18n="solutions.excel.problem">Mit wachsendem Unternehmen werden Tabellen, E-Mail-Verläufe und einzelne Dateien schnell unübersichtlich. Informationen liegen an verschiedenen Stellen und Prozesse werden schwieriger zu koordinieren.</p></div><div class="solution-answer"><p class="solution-label" data-i18n="solutions.label">Unsere Lösung</p><p data-i18n="solutions.excel.solution">Wir entwickeln individuelle Web-Anwendungen und Softwarelösungen, mit denen Sie Informationen, Aufgaben und Abläufe zentral verwalten können.</p><ul class="solution-benefits"><li data-i18n="solutions.excel.benefit1">Kunden- und Terminverwaltung</li><li data-i18n="solutions.excel.benefit2">Projektübersichten und Dashboards</li><li data-i18n="solutions.excel.benefit3">Kundenportale oder Buchungssysteme</li></ul><a class="btn btn-secondary contact-topic-link" href="#kontakt" data-contact-topic="Individuelle Software" data-i18n="solutions.excel.cta">Individuelle Lösung besprechen</a></div></article>
+                    <article class="solution-card"><span class="solution-icon" aria-hidden="true"><i class="fa-solid fa-cloud-arrow-up"></i></span><div class="solution-problem"><h3 data-i18n="solutions.hosting.title">Domain, E-Mail und Hosting sind zu kompliziert?</h3><p data-i18n="solutions.hosting.problem">Domain, Hosting, geschäftliche E-Mail-Adressen, SSL-Zertifikate und technische Einstellungen können schnell unübersichtlich werden.</p></div><div class="solution-answer"><p class="solution-label" data-i18n="solutions.label">Unsere Lösung</p><p data-i18n="solutions.hosting.solution">Wir kümmern uns um die technische Einrichtung und unterstützen Sie dabei, Ihre Online-Infrastruktur zuverlässig zu betreiben.</p><ul class="solution-benefits"><li data-i18n="solutions.hosting.benefit1">Domain-Einrichtung</li><li data-i18n="solutions.hosting.benefit2">Professionelle E-Mail-Adressen</li><li data-i18n="solutions.hosting.benefit3">Hosting und SSL / HTTPS</li></ul><a class="btn btn-secondary contact-topic-link" href="#kontakt" data-contact-topic="Technische Betreuung" data-i18n="solutions.hosting.cta">Technische Unterstützung anfragen</a></div></article>
+                    <article class="solution-card"><span class="solution-icon" aria-hidden="true"><i class="fa-solid fa-puzzle-piece"></i></span><div class="solution-problem"><h3 data-i18n="solutions.software.title">Standardsoftware passt nicht zu Ihren Abläufen?</h3><p data-i18n="solutions.software.problem">Nicht jedes Unternehmen arbeitet gleich. Manchmal sind Standardlösungen zu kompliziert, enthalten unnötige Funktionen oder unterstützen den eigenen Arbeitsablauf nicht ausreichend.</p></div><div class="solution-answer"><p class="solution-label" data-i18n="solutions.label">Unsere Lösung</p><p data-i18n="solutions.software.solution">In solchen Fällen entwickeln wir individuelle Software, Web-Anwendungen oder mobile Lösungen, die sich an Ihren tatsächlichen Anforderungen orientieren.</p><ul class="solution-benefits"><li data-i18n="solutions.software.benefit1">Individuelle Geschäftsanwendungen</li><li data-i18n="solutions.software.benefit2">Interne Tools und Kundenportale</li><li data-i18n="solutions.software.benefit3">Mobile Apps oder spezielle Verwaltungsfunktionen</li></ul><a class="btn btn-secondary contact-topic-link" href="#kontakt" data-contact-topic="Individuelle Software" data-i18n="solutions.software.cta">Projekt besprechen</a></div></article>
                 </div>
+                <div class="solutions-conversion">
+                    <div><h3 data-i18n="solutions.conversion.title">Sie wissen noch nicht genau, welche Lösung Sie brauchen?</h3><p data-i18n="solutions.conversion.text">Kein Problem. Beschreiben Sie uns kurz Ihre aktuelle Situation. In einem kostenlosen Erstgespräch schauen wir gemeinsam, welche Lösung für Ihr Unternehmen sinnvoll ist.</p></div>
+                    <a class="btn btn-primary contact-topic-link" href="#kontakt" data-contact-topic="Sonstiges / Noch nicht sicher" data-i18n="solutions.conversion.cta">Kostenloses Erstgespräch vereinbaren</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="pricing" id="preise">
+            <div class="container">
+                <div class="section-heading"><p class="eyebrow" data-i18n="pricing.eyebrow">Pakete &amp; Preise</p><h2 data-i18n="pricing.title">Pakete &amp; Preise</h2><p data-i18n="pricing.intro">Transparente Orientierung statt versteckter Kosten. Unsere Preise richten sich nach Umfang und Anforderungen Ihres Projekts. Nach einem kostenlosen Erstgespräch erhalten Sie ein individuelles Angebot.</p></div>
+                <div class="pricing-grid">
+                    <article class="pricing-card"><div class="pricing-card-header"><h3 data-i18n="pricing.business.title">Business Website</h3><p class="price" data-i18n="pricing.business.price">ab 990 €</p></div><p data-i18n="pricing.business.text">Eine professionelle Website für kleine Unternehmen und Selbstständige, die online überzeugend auftreten möchten.</p><ul class="feature-list"><li data-i18n="pricing.business.feature1">Individuelles, modernes Design</li><li data-i18n="pricing.business.feature2">Responsive Darstellung für Smartphone, Tablet und Desktop</li><li data-i18n="pricing.business.feature3">Bis zu 5 Inhaltsseiten</li><li data-i18n="pricing.business.feature4">Kontaktmöglichkeit</li><li data-i18n="pricing.business.feature5">Technische Grundkonfiguration und Basis-SEO</li><li data-i18n="pricing.business.feature6">Datenschutzfreundliche Umsetzung und Veröffentlichung</li></ul><a class="btn btn-secondary pricing-cta contact-topic-link" href="#kontakt" data-contact-topic="Neue Website" data-i18n="pricing.business.cta">Website anfragen</a></article>
+                    <article class="pricing-card pricing-card-featured"><div class="pricing-card-header"><span class="pricing-badge" data-i18n="pricing.seo.badge">Empfohlen</span><h3 data-i18n="pricing.seo.title">Website + SEO</h3><p class="price" data-i18n="pricing.seo.price">ab 1.490 €</p></div><p data-i18n="pricing.seo.text">Für Unternehmen, die nicht nur professionell auftreten, sondern auch bei Google besser gefunden werden möchten.</p><ul class="feature-list"><li data-i18n="pricing.seo.feature1">Alles aus dem Business-Website-Paket</li><li data-i18n="pricing.seo.feature2">Erweiterte SEO-Grundoptimierung</li><li data-i18n="pricing.seo.feature3">Optimierte Seitenstruktur</li><li data-i18n="pricing.seo.feature4">Meta-Titel und Beschreibungen</li><li data-i18n="pricing.seo.feature5">Suchmaschinenfreundliche Inhalte und Struktur</li><li data-i18n="pricing.seo.feature6">Performance-Optimierung und grundlegende Analyse-Möglichkeiten</li></ul><a class="btn btn-primary pricing-cta contact-topic-link" href="#kontakt" data-contact-topic="SEO & Google-Präsenz" data-i18n="pricing.seo.cta">Website + SEO anfragen</a></article>
+                    <article class="pricing-card"><div class="pricing-card-header"><h3 data-i18n="pricing.care.title">Website Betreuung</h3><p class="price" data-i18n="pricing.care.price">ab 49 € / Monat</p></div><p data-i18n="pricing.care.text">Damit Ihre Website aktuell, sicher und technisch zuverlässig bleibt.</p><ul class="feature-list"><li data-i18n="pricing.care.feature1">Regelmäßige Updates</li><li data-i18n="pricing.care.feature2">Technische Kontrolle</li><li data-i18n="pricing.care.feature3">Backups</li><li data-i18n="pricing.care.feature4">Kleine Inhaltsänderungen</li><li data-i18n="pricing.care.feature5">Unterstützung bei technischen Problemen</li></ul><p class="pricing-detail" data-i18n="pricing.care.detail">Der genaue Leistungsumfang richtet sich nach dem gewählten Betreuungsmodell.</p><a class="btn btn-secondary pricing-cta contact-topic-link" href="#kontakt" data-contact-topic="Website-Betreuung" data-i18n="pricing.care.cta">Betreuung anfragen</a></article>
+                    <article class="pricing-card"><div class="pricing-card-header"><h3 data-i18n="pricing.automation.title">Digitalisierung &amp; Automatisierung</h3><p class="price" data-i18n="pricing.automation.price">ab 490 €</p></div><p data-i18n="pricing.automation.text">Wir digitalisieren wiederkehrende Abläufe und reduzieren unnötige manuelle Arbeit in Ihrem Unternehmen.</p><ul class="feature-list"><li data-i18n="pricing.automation.feature1">Formulare digitalisieren</li><li data-i18n="pricing.automation.feature2">Automatisierte E-Mails</li><li data-i18n="pricing.automation.feature3">Dokumentenerstellung</li><li data-i18n="pricing.automation.feature4">Datenübertragung zwischen Systemen</li><li data-i18n="pricing.automation.feature5">Einfache administrative Workflows</li></ul><p class="pricing-detail" data-i18n="pricing.automation.detail">Einstiegspreis für kleinere Automatisierungsprojekte.</p><a class="btn btn-secondary pricing-cta contact-topic-link" href="#kontakt" data-contact-topic="Digitalisierung & Automatisierung" data-i18n="pricing.automation.cta">Automatisierung anfragen</a></article>
+                </div>
+                <div class="custom-solutions"><div><p class="eyebrow" data-i18n="pricing.custom.eyebrow">Individuell</p><h3 data-i18n="pricing.custom.title">Individuelle Lösungen</h3><p data-i18n="pricing.custom.text">Sie benötigen eine individuelle Web-Applikation, Softwarelösung oder Mobile App? Wir analysieren Ihre Anforderungen und erstellen ein passendes Angebot.</p></div><div class="custom-price-list"><div><strong data-i18n="pricing.custom.software">Individuelle Software</strong><span data-i18n="pricing.custom.request">Preis auf Anfrage</span></div><div><strong data-i18n="pricing.custom.webapps">Web-Applikationen</strong><span data-i18n="pricing.custom.request">Preis auf Anfrage</span></div><div><strong data-i18n="pricing.custom.mobile">Mobile Apps</strong><span data-i18n="pricing.custom.request">Preis auf Anfrage</span></div></div><a class="btn btn-secondary contact-topic-link" href="#kontakt" data-contact-topic="Individuelle Software" data-i18n="pricing.custom.cta">Projekt besprechen</a></div>
+                <div class="consultation-card"><div><h3 data-i18n="pricing.consultation.title">Kostenloses Erstgespräch</h3><p data-i18n="pricing.consultation.text">Erzählen Sie uns kurz, was Sie benötigen. Wir besprechen gemeinsam die Anforderungen und empfehlen eine passende Lösung – unverbindlich und kostenlos.</p></div><a class="btn btn-primary contact-topic-link" href="#kontakt" data-contact-topic="Sonstiges / Noch nicht sicher" data-i18n="pricing.consultation.cta">Kostenloses Erstgespräch vereinbaren</a></div>
+                <p class="pricing-note" data-i18n="pricing.note">Alle angegebenen Preise verstehen sich als Richtpreise bzw. Einstiegspreise. Der tatsächliche Preis hängt vom Umfang, den gewünschten Funktionen und den individuellen Anforderungen des Projekts ab. Sie erhalten vor Projektbeginn ein transparentes Angebot.</p>
+            </div>
+        </section>
+
+        <section class="references" id="projekte">
+            <div class="container">
+                <div class="section-heading"><p class="eyebrow" data-i18n="references.eyebrow">Projekte</p><h2 data-i18n="references.title">Projekte &amp; Lösungen</h2><p data-i18n="references.intro">Ein Einblick in Lösungen, die wir entwickelt haben – von Websites bis zu individuellen Web-Anwendungen. Unsere Projekte zeigen, wie digitale Lösungen konkrete Arbeitsabläufe vereinfachen können.</p></div>
+                <article class="case-study">
+                    <div class="case-study-hero"><div class="case-study-copy"><span class="project-label" data-i18n="references.tutor.label">Eigenes Projekt</span><h3 data-i18n="references.tutor.title">TutorNotebook</h3><p class="case-subtitle" data-i18n="references.tutor.subtitle">Webplattform für Unterrichtsorganisation</p><p data-i18n="references.tutor.intro">TutorNotebook ist eine Web-Anwendung zur zentralen Organisation von Unterricht, Schülern, Terminen und administrativen Aufgaben.</p></div><div class="case-study-media"><img src="screenshot_app.png" loading="lazy" alt="TutorNotebook Startansicht mit Registrierung und Login für Tutorinnen und Tutoren"></div></div>
+                    <div class="case-study-grid"><section class="case-panel" aria-labelledby="tutor-challenge"><span class="case-icon" aria-hidden="true"><i class="fa-solid fa-circle-question"></i></span><h4 id="tutor-challenge" data-i18n="references.tutor.challenge.title">Die Herausforderung</h4><p data-i18n="references.tutor.challenge.text">Bei der Organisation von Unterricht entstehen viele Informationen: Schülerdaten, Termine, Unterrichtseinheiten, Notizen und administrative Aufgaben. Werden diese Informationen über Tabellen, Notizen und verschiedene Dateien verteilt verwaltet, wird der Arbeitsalltag schnell unübersichtlich.</p></section><section class="case-panel" aria-labelledby="tutor-solution"><span class="case-icon" aria-hidden="true"><i class="fa-solid fa-lightbulb"></i></span><h4 id="tutor-solution" data-i18n="references.tutor.solution.title">Die Lösung</h4><p data-i18n="references.tutor.solution.text">TutorNotebook bündelt wichtige Informationen in einer zentralen Web-Anwendung und ermöglicht eine strukturierte Verwaltung des Unterrichtsalltags.</p></section></div>
+                    <div class="case-study-detail"><div class="case-screens"><img src="tutor_notebook_react.png" loading="lazy" alt="TutorNotebook Weboberfläche mit Tutor-Registrierung und Zugangsschritten"></div><div class="case-info"><section aria-labelledby="tutor-features"><h4 id="tutor-features" data-i18n="references.tutor.features.title">Funktionen im Überblick</h4><ul class="case-feature-list"><li data-i18n="references.tutor.features.item1">Tutor-Zugang mit Registrierung und Login</li><li data-i18n="references.tutor.features.item2">Zentrale Organisation von Unterrichtsinformationen</li><li data-i18n="references.tutor.features.item3">Strukturierte Bereiche für Schüler, Unterricht, Rechnungen, Berichte und Materialien</li><li data-i18n="references.tutor.features.item4">Übersichtliche Weboberfläche für den Unterrichtsalltag</li></ul></section><section aria-labelledby="tutor-relevance"><h4 id="tutor-relevance" data-i18n="references.tutor.relevance.title">Was dieses Projekt zeigt</h4><p data-i18n="references.tutor.relevance.text">TutorNotebook zeigt, wie individuelle Web-Anwendungen Arbeitsabläufe strukturieren und relevante Informationen an einem zentralen Ort zusammenführen können. Eine ähnliche Lösung kann auch für andere Geschäftsprozesse entwickelt werden.</p></section><section aria-labelledby="tutor-tech"><h4 id="tutor-tech" data-i18n="references.tutor.tech.title">Technologie</h4><div class="tech-list" aria-label="Technologien"><span>React</span></div></section></div></div>
+                    <div class="case-study-cta"><div><h4 data-i18n="references.tutor.cta.title">Sie benötigen eine ähnliche Lösung?</h4><p data-i18n="references.tutor.cta.text">Wir entwickeln individuelle Web-Anwendungen, die sich an Ihren tatsächlichen Arbeitsabläufen orientieren.</p></div><a class="btn btn-primary contact-topic-link" href="#kontakt" data-contact-topic="Web-Applikation" data-i18n="references.tutor.cta.button">Projekt besprechen</a></div>
+                </article>
+            </div>
+        </section>
+
+        <section class="contact" id="kontakt">
+            <div class="container contact-layout">
+                <div class="contact-copy">
+                    <p class="eyebrow" data-i18n="contact.eyebrow">Kontakt</p>
+                    <h2 data-i18n="contact.title">Lassen Sie uns über Ihr Projekt sprechen</h2>
+                    <p data-i18n="contact.text">Sie haben eine Idee, benötigen eine neue Website oder möchten einen bestehenden Arbeitsablauf digitalisieren? Erzählen Sie uns kurz, was Sie vorhaben.</p>
+                    <p class="contact-note" data-i18n="contact.note">Das Erstgespräch ist kostenlos und unverbindlich.</p>
+                    <div class="consultation-box"><h3 data-i18n="contact.consultation.title">Kostenloses Erstgespräch</h3><p data-i18n="contact.consultation.text">Sie müssen noch nicht genau wissen, welche technische Lösung Sie benötigen. Beschreiben Sie uns einfach Ihre aktuelle Situation – gemeinsam finden wir heraus, was für Ihr Unternehmen sinnvoll ist.</p></div>
+                    <ul class="trust-list" aria-label="Vorteile der Kontaktaufnahme"><li data-i18n="contact.trust.item1">Persönlicher Ansprechpartner</li><li data-i18n="contact.trust.item2">Verständliche Beratung ohne unnötigen IT-Jargon</li><li data-i18n="contact.trust.item3">Transparente Angebote</li><li data-i18n="contact.trust.item4">Lösungen passend zu Ihrem Unternehmen</li></ul>
+                    <div class="contact-direct"><h3 data-i18n="contact.direct.title">Lieber direkt Kontakt aufnehmen?</h3><a class="contact-link" href="tel:+436607722169"><i class="fa-solid fa-phone" aria-hidden="true"></i><span><strong data-i18n="footer.phone">Telefon</strong>+43 660 7722169</span></a><a class="contact-link" href="mailto:office@ivancevicweb.com"><i class="fa-solid fa-envelope" aria-hidden="true"></i><span><strong data-i18n="footer.email">E-Mail</strong>office@ivancevicweb.com</span></a><p class="service-area" data-i18n="contact.area">Wien &amp; Niederösterreich · Projekte in ganz Österreich möglich</p></div>
+                </div>
+                <form class="contact-form" id="contact-form" action="/contact" method="post" novalidate>
+                    <div class="form-status" id="contact-status" role="status" aria-live="polite"></div>
+                    <div class="form-grid"><div class="form-field"><label for="contact-name" data-i18n="contact.form.name">Name</label><input id="contact-name" name="name" type="text" autocomplete="name" required><p class="field-error" id="contact-name-error"></p></div><div class="form-field"><label for="contact-company" data-i18n="contact.form.company">Firma</label><input id="contact-company" name="company" type="text" autocomplete="organization"></div><div class="form-field"><label for="contact-email" data-i18n="contact.form.email">E-Mail</label><input id="contact-email" name="email" type="email" autocomplete="email" required><p class="field-error" id="contact-email-error"></p></div><div class="form-field"><label for="contact-phone" data-i18n="contact.form.phone">Telefon</label><input id="contact-phone" name="phone" type="tel" autocomplete="tel"></div></div>
+                    <div class="form-field"><label for="contact-topic" data-i18n="contact.form.topic">Worum geht es?</label><select id="contact-topic" name="topic"><option>Neue Website</option><option>Website-Redesign</option><option>Website-Betreuung</option><option>SEO &amp; Google-Präsenz</option><option>Digitalisierung &amp; Automatisierung</option><option>Individuelle Software</option><option>Web-Applikation</option><option>Mobile App</option><option>Technische Betreuung</option><option selected>Sonstiges / Noch nicht sicher</option></select></div>
+                    <div class="form-field"><label for="contact-budget" data-i18n="contact.form.budget">Budgetrahmen (optional)</label><select id="contact-budget" name="budget"><option>Noch nicht festgelegt</option><option>Bis 1.000 €</option><option>1.000 – 2.500 €</option><option>2.500 – 5.000 €</option><option>5.000 – 10.000 €</option><option>Über 10.000 €</option></select></div>
+                    <div class="form-field"><label for="contact-message" data-i18n="contact.form.message">Wie können wir Ihnen helfen?</label><textarea id="contact-message" name="message" rows="6" placeholder="Beschreiben Sie kurz Ihr Projekt, Ihre Idee oder das Problem, das Sie lösen möchten." required></textarea><p class="field-error" id="contact-message-error"></p></div>
+                    <div class="form-field honeypot" aria-hidden="true"><label for="contact-website">Website</label><input id="contact-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+                    <div class="privacy-field"><input id="contact-privacy" name="privacy" type="checkbox" required><label for="contact-privacy">Ich habe die <a href="dataprotection.html">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Angaben zur Bearbeitung meiner Anfrage zu.</label></div>
+                    <p class="field-error" id="contact-privacy-error"></p>
+                    <button class="btn btn-primary form-submit" type="submit" data-default-text="Anfrage senden" data-loading-text="Wird gesendet ...">Anfrage senden</button>
+                </form>
             </div>
         </section>
     </main>
 
     <footer class="site-footer">
         <div class="container footer-grid">
-            <div>
-                <p><strong data-i18n="footer.phone">Phone</strong><br>+43 660 7722169</p>
-                <p><strong data-i18n="footer.email">Email</strong><br>office@ivancevicweb.com</p>
-            </div>
-            <div class="socials">
-                <a href="https://at.linkedin.com/in/slavica-ivancevic-799033295" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="https://github.com/slavicarab" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            </div>
-            <div class="footer-links">
-                <a href="impressum.html" data-i18n="footer.impressum">Impressum</a>
-                <a href="dataprotection.html" data-i18n="footer.privacy">Dataprotection</a>
-            </div>
+            <div><p><strong data-i18n="footer.phone">Phone</strong><br>+43 660 7722169</p><p><strong data-i18n="footer.email">Email</strong><br>office@ivancevicweb.com</p></div>
+            <div class="socials"><a href="https://at.linkedin.com/in/slavica-ivancevic-799033295" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a><a href="https://github.com/slavicarab" aria-label="GitHub"><i class="fa-brands fa-github"></i></a></div>
+            <div class="footer-links"><a href="#kontakt" data-i18n="nav.contact">Kontakt</a><a href="impressum.html" data-i18n="footer.impressum">Impressum</a><a href="dataprotection.html" data-i18n="footer.privacy">Dataprotection</a></div>
         </div>
     </footer>
     <script src="lang.js"></script>
