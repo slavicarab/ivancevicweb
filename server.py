@@ -2,8 +2,10 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 import json
 import mimetypes
 import os
+import re
 import smtplib
 import ssl
+import time
 from email.message import EmailMessage
 
 try:
@@ -34,8 +36,19 @@ def log(message: str) -> None:
     print(f"[contact-backend] {message}", flush=True)
 
 
+def env_flag(name: str, default: bool = False) -> bool:
+    value = os.environ.get(name)
+    if value is None:
+        return default
+    return value.strip().lower() in ('1', 'true', 'yes', 'on')
+
+
 def smtp_configured() -> bool:
-    return all([SMTP_HOST, SMTP_PORT, SMTP_USERNAME, SMTP_PASSWORD, EMAIL_RECIPIENT])
+    return all([SMTP_HOST, SMTP_PORT, EMAIL_SENDER, EMAIL_RECIPIENT])
+
+
+def smtp_auth_configured() -> bool:
+    return bool(SMTP_USERNAME and SMTP_PASSWORD)
 
 
 load_dotenv()
@@ -47,13 +60,18 @@ SMTP_HOST = os.environ.get('SMTP_HOST', '')
 SMTP_PORT = int(os.environ.get('SMTP_PORT', '587'))
 SMTP_USERNAME = os.environ.get('SMTP_USERNAME', '')
 SMTP_PASSWORD = os.environ.get('SMTP_PASSWORD', '')
-EMAIL_SENDER = os.environ.get('EMAIL_SENDER', SMTP_USERNAME)
-EMAIL_RECIPIENT = os.environ.get('EMAIL_RECIPIENT', 'slavicarabrenovic@yahoo.com')
+EMAIL_SENDER = os.environ.get('EMAIL_SENDER', SMTP_USERNAME or os.environ.get('EMAIL_RECIPIENT', ''))
+EMAIL_RECIPIENT = os.environ.get('EMAIL_RECIPIENT', '')
+SMTP_STARTTLS = env_flag('SMTP_STARTTLS', default=bool(SMTP_USERNAME or SMTP_PASSWORD))
+
+RATE_LIMIT_SECONDS = 30
+LAST_SUBMISSIONS = {}
+EMAIL_PATTERN = re.compile(r'^[^\s@]+@[^\s@]+\.[^\s@]+$')
 
 
 def send_email_notification(subject: str, body: str) -> None:
     if not smtp_configured():
-        raise RuntimeError('SMTP is not configured. Please set SMTP_HOST, SMTP_USERNAME, SMTP_PASSWORD, and EMAIL_RECIPIENT.')
+        raise RuntimeError('SMTP is not configured. Please set SMTP_HOST, EMAIL_SENDER, and EMAIL_RECIPIENT.')
 
     message = EmailMessage()
     message['Subject'] = subject
@@ -63,17 +81,22 @@ def send_email_notification(subject: str, body: str) -> None:
 
     log(f"Sending email to {EMAIL_RECIPIENT} via {SMTP_HOST}:{SMTP_PORT}")
 
-    if certifi is not None:
-        cafile = certifi.where()
-        log(f'Using certifi CA bundle: {cafile}')
-        context = ssl.create_default_context(cafile=cafile)
-    else:
-        log('Certifi not installed; using system default certificate store')
-        context = ssl.create_default_context()
-
     with smtplib.SMTP(SMTP_HOST, SMTP_PORT) as server:
-        server.starttls(context=context)
-        server.login(SMTP_USERNAME, SMTP_PASSWORD)
+        if SMTP_STARTTLS:
+            if certifi is not None:
+                cafile = certifi.where()
+                log(f'Using certifi CA bundle: {cafile}')
+                context = ssl.create_default_context(cafile=cafile)
+            else:
+                log('Certifi not installed; using system default certificate store')
+                context = ssl.create_default_context()
+            server.starttls(context=context)
+
+        if smtp_auth_configured():
+            server.login(SMTP_USERNAME, SMTP_PASSWORD)
+        else:
+            log('SMTP authentication disabled; sending through local/trusted SMTP relay.')
+
         server.send_message(message)
 
     log('Email sent successfully.')
@@ -151,23 +174,29 @@ class ContactHandler(BaseHTTPRequestHandler):
             self.wfile.write(json.dumps({'success': False, 'message': 'Invalid JSON payload'}).encode('utf-8'))
             return
 
-        first_name = str(data.get('firstName', '')).strip()
-        last_name = str(data.get('lastName', '')).strip()
-        email = str(data.get('email', '')).strip()
-        message = str(data.get('message', '')).strip()
-        antispam_answer = str(data.get('antispamAnswer', '')).strip()
-        honeypot = str(data.get('honeypot', '')).strip()
-
-        if not all([first_name, last_name, email, message, antispam_answer]):
-            self.send_response(400)
+        client_ip = self.client_address[0]
+        now = time.time()
+        last_submission = LAST_SUBMISSIONS.get(client_ip, 0)
+        if now - last_submission < RATE_LIMIT_SECONDS:
+            self.send_response(429)
             self.send_header('Content-Type', 'application/json')
             self.send_header('Access-Control-Allow-Origin', '*')
             self.end_headers()
-            self.wfile.write(json.dumps({'success': False, 'message': 'All fields are required'}).encode('utf-8'))
+            self.wfile.write(json.dumps({'success': False, 'message': 'Please wait before submitting again.'}).encode('utf-8'))
             return
 
+        name = str(data.get('name', '')).strip()
+        company = str(data.get('company', '')).strip()
+        email = str(data.get('email', '')).strip()
+        phone = str(data.get('phone', '')).strip()
+        topic = str(data.get('topic', '')).strip()
+        budget = str(data.get('budget', '')).strip()
+        message = str(data.get('message', '')).strip()
+        privacy = bool(data.get('privacy', False))
+        honeypot = str(data.get('website', '')).strip()
+
         if honeypot:
-            log(f"Rejected spam request from {self.client_address[0]}")
+            log(f"Rejected spam request from {client_ip}")
             self.send_response(400)
             self.send_header('Content-Type', 'application/json')
             self.send_header('Access-Control-Allow-Origin', '*')
@@ -175,32 +204,76 @@ class ContactHandler(BaseHTTPRequestHandler):
             self.wfile.write(json.dumps({'success': False, 'message': 'Spam detected'}).encode('utf-8'))
             return
 
-        if antispam_answer != '5':
-            log(f"Incorrect anti-spam answer from {self.client_address[0]}")
+        if not all([name, email, message, privacy]):
             self.send_response(400)
             self.send_header('Content-Type', 'application/json')
             self.send_header('Access-Control-Allow-Origin', '*')
             self.end_headers()
-            self.wfile.write(json.dumps({'success': False, 'message': 'Anti-spam answer is incorrect'}).encode('utf-8'))
+            self.wfile.write(json.dumps({'success': False, 'message': 'Required fields are missing'}).encode('utf-8'))
             return
 
-        log(f"Received contact from {first_name} {last_name} <{email}>")
-        with open('messages.txt', 'a', encoding='utf-8') as file:
-            file.write(f'Name: {first_name} {last_name}\nEmail: {email}\nMessage: {message}\n---\n')
+        if not EMAIL_PATTERN.match(email):
+            self.send_response(400)
+            self.send_header('Content-Type', 'application/json')
+            self.send_header('Access-Control-Allow-Origin', '*')
+            self.end_headers()
+            self.wfile.write(json.dumps({'success': False, 'message': 'Invalid email address'}).encode('utf-8'))
+            return
 
-        email_subject = f'New portfolio message from {first_name} {last_name}'
+        if any(len(value) > limit for value, limit in [
+            (name, 120),
+            (company, 160),
+            (email, 180),
+            (phone, 80),
+            (topic, 120),
+            (budget, 80),
+            (message, 5000),
+        ]):
+            self.send_response(400)
+            self.send_header('Content-Type', 'application/json')
+            self.send_header('Access-Control-Allow-Origin', '*')
+            self.end_headers()
+            self.wfile.write(json.dumps({'success': False, 'message': 'Submitted fields are too long'}).encode('utf-8'))
+            return
+
+        LAST_SUBMISSIONS[client_ip] = now
+
+        log(f"Received contact from {name} <{email}>")
+        with open('messages.txt', 'a', encoding='utf-8') as file:
+            file.write(
+                f'Name: {name}\n'
+                f'Company: {company or "-"}\n'
+                f'Email: {email}\n'
+                f'Phone: {phone or "-"}\n'
+                f'Topic: {topic or "-"}\n'
+                f'Budget: {budget or "-"}\n'
+                f'Privacy consent: yes\n'
+                f'Message: {message}\n'
+                f'---\n'
+            )
+
+        email_subject = f'Neue Anfrage von {name}'
         email_body = (
-            f'You have a new message from your portfolio contact form.\n\n'
-            f'Name: {first_name} {last_name}\n'
-            f'Email: {email}\n\n'
-            f'Message:\n{message}\n'
+            f'Neue Anfrage über ivancevicweb.com\n\n'
+            f'Name: {name}\n'
+            f'Firma: {company or "-"}\n'
+            f'E-Mail: {email}\n'
+            f'Telefon: {phone or "-"}\n'
+            f'Thema: {topic or "-"}\n'
+            f'Budgetrahmen: {budget or "-"}\n'
+            f'Datenschutz bestätigt: ja\n\n'
+            f'Nachricht:\n{message}\n'
         )
 
         email_status = 'Message received successfully.'
-        try:
-            send_email_notification(email_subject, email_body)
-        except Exception as error:
-            email_status = f'Message saved, but email notification failed: {error}'
+        if smtp_configured():
+            try:
+                send_email_notification(email_subject, email_body)
+            except Exception as error:
+                log(f'Email notification failed: {error}')
+                email_status = 'Message saved, but email notification failed.'
+        else:
+            log('SMTP not configured; message was saved locally only.')
 
         self.send_response(200)
         self.send_header('Content-Type', 'application/json')
@@ -218,8 +291,10 @@ if __name__ == '__main__':
     log(f'Server running on http://{HOST}:{PORT}')
 
     if smtp_configured():
-        log(f'SMTP configured for recipient {EMAIL_RECIPIENT} via {SMTP_HOST}:{SMTP_PORT}')
+        auth_mode = 'authenticated SMTP' if smtp_auth_configured() else 'local/trusted SMTP without login'
+        tls_mode = 'STARTTLS enabled' if SMTP_STARTTLS else 'STARTTLS disabled'
+        log(f'SMTP configured for recipient {EMAIL_RECIPIENT} via {SMTP_HOST}:{SMTP_PORT} ({auth_mode}, {tls_mode})')
     else:
-        log('WARNING: SMTP is not fully configured. Email notifications will fail until .env is set correctly.')
+        log('WARNING: SMTP is not fully configured. Set SMTP_HOST, EMAIL_SENDER, and EMAIL_RECIPIENT to enable email notifications.')
 
     server.serve_forever()

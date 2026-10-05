@@ -1,24 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slavica Ivancevic | Modern Portfolio</title>
-    <meta name="description" content="Modern portfolio website for Slavica Ivancevic featuring services, skills, and contact information.">
+    <title>Ivancevic Web | Digitale Lösungen für kleine Unternehmen</title>
+    <meta name="description" content="Websites, Automatisierung und individuelle Softwarelösungen für kleine Unternehmen in Österreich.">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Doto:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="site-header">
         <div class="container nav-wrap">
-            <a class="brand" href="#top">Slavica Ivancevic</a>
+            <a class="brand" href="#top">Ivancevic Web</a>
             <nav class="nav" aria-label="Main navigation">
-                <a href="#about" data-i18n="nav.about">About</a>
-                <a href="#services" data-i18n="nav.services">Services</a>
-                <a href="#contact" data-i18n="nav.contact">Contact</a>
+                <a href="#leistungen" data-i18n="nav.services">Leistungen</a>
+                <a href="#contact" data-i18n="nav.contact">Kontakt</a>
             </nav>
             <div class="lang-switch" aria-label="Language switcher">
                 <button class="lang-toggle" type="button" data-lang="en" aria-label="English">EN</button>
@@ -31,18 +30,21 @@
         <section class="hero">
             <div class="container hero-grid">
                 <div class="hero-copy">
-                    <p class="eyebrow" data-i18n="hero.eyebrow"> • Web Development • Digital Solutions</p>
-                    <h1 data-i18n="hero.title">I build practical web applications and digital solutions for small businesses.</h1>
-                    <p data-i18n="hero.text">From responsive websites and custom management tools to educational platforms and workflow automation, I turn ideas into clear, reliable, and user-friendly digital products.</p>
+                    <p class="eyebrow" data-i18n="hero.eyebrow">IT Services in Österreich</p>
+                    <h1 data-i18n="hero.title">Digitale Lösungen für kleine Unternehmen</h1>
+                    <p data-i18n="hero.text">Websites, Automatisierung und individuelle Softwarelösungen für Unternehmen in Österreich.</p>
                     <div class="hero-actions">
-                        <a class="btn btn-primary" href="projects.html" data-i18n="hero.button.primary">View my Projects</a>
-                        <a class="btn btn-secondary" href="#contact" data-i18n="hero.button.secondary">Discuss your Project</a>
+                        <a class="btn btn-primary" href="#contact" data-i18n="hero.button.primary">Kostenloses Erstgespräch</a>
+                        <a class="btn btn-secondary" href="#leistungen" data-i18n="hero.button.secondary">Unsere Leistungen</a>
                     </div>
                 </div>
                 <div class="hero-card">
-                    <img src="_DSC4470.jpg" alt="Slavica Ivancevic">
-                    <h3 data-i18n="hero.card.title">Current focus</h3>
-                    <p data-i18n="hero.card.text">Building modern digital solutions with a strong focus on user experience, clear structure, and thoughtful implementation.</p>
+                    <img src="hero-workflow-code.png" alt="Illustration of a digital workflow with website, automation, code, and dashboard elements">
+                    <div class="hero-card-copy">
+                        <p class="eyebrow" data-i18n="hero.card.eyebrow">Für KMU</p>
+                        <h3 data-i18n="hero.card.title">Pragmatische IT-Unterstützung, klar geplant und sauber umgesetzt.</h3>
+                        <p data-i18n="hero.card.text">Von der professionellen Website bis zur digitalen Entlastung im Arbeitsalltag.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -79,42 +81,54 @@
             </div>
         </section>
 
-        <section class="projects" id="services">
+        <section class="services" id="leistungen">
             <div class="container">
                 <div class="section-heading">
-                    <p class="eyebrow" data-i18n="services.eyebrow">Services</p>
-                    <h2 data-i18n="services.title">Professional support for modern digital solutions.</h2>
+                    <p class="eyebrow" data-i18n="services.eyebrow">Leistungen</p>
+                    <h2 data-i18n="services.title">Unsere Leistungen</h2>
+                    <p data-i18n="services.intro">Von der professionellen Website bis zur individuellen Softwarelösung – wir unterstützen kleine Unternehmen dabei, digital professioneller, effizienter und sichtbarer zu werden.</p>
                 </div>
-                <div class="project-grid">
-                    <article class="project-card">
-                        <a href="https://www.ivancevicart.com/en/" target="_blank" rel="noopener noreferrer" aria-label="Open Ivancevic Art website">
-                            <img src="screenshot_website.png" alt="Modern website preview">
-                        </a>
-                        <h3 data-i18n="services.card1.title">Modern Website Development</h3>
-                        <p data-i18n="services.card1.text">Responsive, modern websites for small businesses, educational organizations, and independent professionals. I focus on clear structure, user-friendly design, multilingual content, and reliable performance.</p>
-                        <a href="#contact" data-i18n="services.link">Book a consultation</a>
+                <div class="services-grid">
+                    <article class="service-card">
+                        <span class="service-icon" aria-hidden="true"><i class="fa-solid fa-globe"></i></span>
+                        <h3 data-i18n="services.website.title">Website-Erstellung</h3>
+                        <p data-i18n="services.website.text">Moderne, professionelle Websites, die zu Ihrem Unternehmen passen und auf Smartphone, Tablet und Desktop optimal funktionieren.</p>
                     </article>
-                    <article class="project-card">
-                        <a href="https://tutor-notebook.ivancevicweb.com/" target="_blank" rel="noopener noreferrer" aria-label="Open Tutor Notebook React website">
-                            <img src="screenshot_app.png" alt="Web application preview">
-                        </a>
-                        <h3 data-i18n="services.card2.title">Custom Web Applications</h3>
-                        <p data-i18n="services.card2.text">Practical web applications tailored to your workflow, including customer portals, administration systems, booking tools, content management solutions, and educational platforms.</p>
-                        <a href="#contact" data-i18n="services.link">Book a consultation</a>
+                    <article class="service-card">
+                        <span class="service-icon" aria-hidden="true"><i class="fa-solid fa-screwdriver-wrench"></i></span>
+                        <h3 data-i18n="services.maintenance.title">Website-Wartung &amp; Betreuung</h3>
+                        <p data-i18n="services.maintenance.text">Wir kümmern uns um Updates, Änderungen, Sicherheit und die laufende technische Betreuung Ihrer Website.</p>
                     </article>
-                    <article class="project-card">
-                        <a href="https://tutornotebook.ivancevicweb.com/" target="_blank" rel="noopener noreferrer" aria-label="Open Tutor Notebook website">
-                            <img src="tutor_notebook_java.png" alt="Tutor Notebook Java application preview">
-                        </a>
-                        <h3 data-i18n="services.card3.title">Digital Process Solutions</h3>
-                        <p data-i18n="services.card3.text">Support with Odoo, database organization, workflow automation, project coordination, and the digitalization of administrative or educational processes.</p>
-                        <a href="#contact" data-i18n="services.link">Book a consultation</a>
+                    <article class="service-card">
+                        <span class="service-icon" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-chart"></i></span>
+                        <h3 data-i18n="services.seo.title">SEO &amp; Google-Präsenz</h3>
+                        <p data-i18n="services.seo.text">Wir optimieren Ihre Website für Suchmaschinen und helfen dabei, dass Ihr Unternehmen online besser gefunden wird.</p>
                     </article>
-                    <article class="project-card">
-                        <img src="https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg" alt="Mobile application preview">
-                        <h3 data-i18n="services.card4.title">Mobile Applications</h3>
-                        <p data-i18n="services.card4.text">Cross-platform mobile applications developed with React Native and Expo for educational content, internal tools, and customer-facing services.</p>
-                        <a href="#contact" data-i18n="services.link">Book a consultation</a>
+                    <article class="service-card">
+                        <span class="service-icon" aria-hidden="true"><i class="fa-solid fa-arrows-spin"></i></span>
+                        <h3 data-i18n="services.automation.title">Digitalisierung &amp; Automatisierung</h3>
+                        <p data-i18n="services.automation.text">Wir vereinfachen wiederkehrende Abläufe und helfen Ihnen, manuelle Arbeit durch praktische digitale Lösungen zu reduzieren.</p>
+                    </article>
+                    <article class="service-card">
+                        <span class="service-icon" aria-hidden="true"><i class="fa-solid fa-envelope-open-text"></i></span>
+                        <h3 data-i18n="services.hosting.title">E-Mail, Domain &amp; Hosting</h3>
+                        <p data-i18n="services.hosting.text">Wir unterstützen Sie bei Domain, professionellen E-Mail-Adressen, Hosting und der technischen Einrichtung Ihrer Online-Präsenz.</p>
+                    </article>
+                    <article class="service-card">
+                        <span class="service-icon" aria-hidden="true"><i class="fa-solid fa-gears"></i></span>
+                        <h3 data-i18n="services.software.title">Individuelle Software</h3>
+                        <p data-i18n="services.software.text">Wenn Standardsoftware nicht zu Ihren Abläufen passt, entwickeln wir eine Lösung, die auf die Anforderungen Ihres Unternehmens zugeschnitten ist.</p>
+                    </article>
+                    <article class="service-card">
+                        <span class="service-icon" aria-hidden="true"><i class="fa-solid fa-window-restore"></i></span>
+                        <h3 data-i18n="services.webapps.title">Web-Applikationen</h3>
+                        <p data-i18n="services.webapps.text">Individuelle Web-Anwendungen für interne Abläufe, Kundenportale, Verwaltung, Buchungen oder andere geschäftliche Anforderungen.</p>
+                    </article>
+                    <article class="service-card">
+                        <span class="service-icon" aria-hidden="true"><i class="fa-solid fa-mobile-screen-button"></i></span>
+                        <h3 data-i18n="services.mobile.title">Mobile Apps</h3>
+                        <p data-i18n="services.mobile.text">Individuelle mobile Anwendungen für Unternehmen – von einfachen Geschäftsanwendungen bis zu Lösungen, die bestehende digitale Prozesse ergänzen.</p>
+
                     </article>
                 </div>
             </div>

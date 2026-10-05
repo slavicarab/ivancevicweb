@@ -7,12 +7,15 @@ import urllib.request
 def main():
     url = 'http://127.0.0.1:8001/contact'
     payload = {
-        'firstName': 'Console',
-        'lastName': 'Test',
+        'name': 'Console Test',
+        'company': 'Test Company',
         'email': 'console@example.com',
+        'phone': '',
+        'topic': 'Sonstiges / Noch nicht sicher',
+        'budget': 'Noch nicht festgelegt',
         'message': 'This is a direct console test of the contact backend.',
-        'antispamAnswer': '5',
-        'honeypot': ''
+        'privacy': True,
+        'website': ''
     }
 
     if len(sys.argv) > 1:
