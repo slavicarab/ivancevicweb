@@ -623,5 +623,20 @@ function initContactForm() {
   });
 }
 
+function initBackToTopButton() {
+  const button = document.querySelector('.back-to-top');
+  if (!button) {
+    return;
+  }
+
+  function updateVisibility() {
+    button.classList.toggle('is-visible', window.scrollY > 320);
+  }
+
+  updateVisibility();
+  window.addEventListener('scroll', updateVisibility, { passive: true });
+}
+
 initLanguageSwitcher();
 initContactForm();
+initBackToTopButton();

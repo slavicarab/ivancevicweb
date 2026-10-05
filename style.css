@@ -71,6 +71,13 @@ img {
   letter-spacing: 0;
 }
 
+.brand span {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
 .nav {
   display: flex;
   gap: 1.25rem;
@@ -1179,6 +1186,38 @@ button:focus-visible {
   font-weight: 600;
 }
 
+.back-to-top {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 20;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #04111f;
+  box-shadow: var(--shadow);
+  font-size: 1rem;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(0.75rem);
+  transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  transform: translateY(-3px);
+}
+
 @media (max-width: 900px) {
   .hero-grid,
   .about-grid,
@@ -1324,5 +1363,10 @@ button:focus-visible {
 
   .form-grid {
     grid-template-columns: 1fr;
+  }
+
+  .back-to-top {
+    right: 1rem;
+    bottom: 1rem;
   }
 }
