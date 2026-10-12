@@ -1,5 +1,56 @@
 const translations = {
   en: {
+    'website.heroAlt': 'Website example from the Ivancevic Web portfolio',
+    'website.projectAlt': 'Preview of the Ivancevic Art website linked in the portfolio',
+    "website.metaTitle": "Website creation for businesses in Austria | Ivancevic Web",
+    "website.metaDescription": "Website creation for small businesses in Austria. Personal advice, responsive design and transparent quotes. Free initial consultation.",
+    "website.eyebrow": "Website creation for small businesses",
+    "website.title": "Website creation for small businesses in Austria",
+    "website.intro": "Would you like a professional website that fits your business? We support small businesses and self-employed professionals with personal advice, clear structure and a website that works on phone, tablet and desktop. In Vienna and Lower Austria, with projects possible throughout Austria.",
+    "website.cta": "Free initial consultation",
+    "website.costLink": "View costs and services",
+    "website.heroCardTitle": "Personal support. Clear planning.",
+    "website.heroCardText": "A website that presents your services clearly and makes it easier for visitors to contact you.",
+    "website.businessText": "When you commission a business website, your services and customers come first. Whether you need a new website or a redesign, we align its structure and features with your business requirements.",
+    "website.firmenwebsiteTitle": "A business website that fits your company",
+    "website.feature0": "Individual, modern design",
+    "website.feature1": "Responsive display for phone, tablet and desktop",
+    "website.feature2": "Up to 5 content pages",
+    "website.feature3": "Contact option",
+    "website.feature4": "Basic technical setup and basic SEO",
+    "website.feature5": "Privacy-friendly implementation and publication",
+    "website.scope": "These services are included in the existing Business Website package. Additional pages or features are considered in your individual quote.",
+    "website.leistungenTitle": "What your professional website includes",
+    "website.planningText": "In the free initial consultation, we discuss what you need. Scope, desired features and individual requirements form the basis of your quote. You receive a transparent price before the project starts.",
+    "website.planningNote": "We clarify the content, reviews and steps required for your specific project through to publication.",
+    "website.planungTitle": "Planning your new website",
+    "website.costIntro": "Our Business Website package starts at €990, and Website + SEO starts at €1,490. The final price depends on scope, desired features and individual requirements.",
+    "website.costDetails": "To prepare a suitable quote, we discuss page count, required content, language versions, additional features and the desired SEO scope. The quote clarifies services and ongoing costs for domains, hosting or support.",
+    "website.care": "Website Care is offered on the existing pricing section from €49 per month. The exact scope depends on the selected support model.",
+    "website.allPrices": "View all packages and prices",
+    "website.kostenTitle": "Website creation: costs and services",
+    "website.local": "Small businesses and self-employed professionals need a website that communicates their services clearly. We value personal contact, understandable advice and solutions suited to your needs. We support Vienna and Lower Austria, with projects possible throughout Austria.",
+    "website.aboutLink": "About Ivancevic Web",
+    "website.kmuTitle": "Website creation for small businesses in Austria",
+    "website.projectName": "Ivancevic Art",
+    "website.projectText": "The Ivancevic Art website is already linked in our portfolio. Explore this website example and other digital projects.",
+    "website.projectLink": "View website example in the portfolio",
+    "website.projekteTitle": "A look at our website projects",
+    "website.faq0q": "How much does website creation cost?",
+    "website.faq0a": "The Business Website package starts at €990, and Website + SEO starts at €1,490. These are starting prices. Your quote depends on the specific scope and desired features.",
+    "website.faq1q": "Can my existing website be modernized?",
+    "website.faq1a": "Yes. We modernize existing websites or develop a new professional online presence. We discuss your current situation in the initial consultation.",
+    "website.faq2q": "What content is needed?",
+    "website.faq2a": "Information about your business, services and contact options helps with planning. We clarify the required text and images and who provides them for your project.",
+    "website.faq3q": "How long does website creation take?",
+    "website.faq3a": "The schedule depends on scope, functionality and content availability. We discuss the specific plan for your project.",
+    "website.faq4q": "Is support available after publication?",
+    "website.faq4a": "We offer website maintenance and technical support. The support package starts at €49 per month; the exact scope depends on the selected model.",
+    "website.fragenTitle": "Frequently asked questions about website creation",
+    "website.contactText": "Tell us whether you need a new website or want to improve your existing one. We discuss your requirements and recommend a suitable solution, free of charge and without obligation.",
+    "website.contactLink": "Discuss your website project",
+    "website.erstgespraechTitle": "Free initial consultation for your website",
+    "services.website.more": "More about website creation",
     'nav.about': 'About us',
     'nav.services': 'Services',
     'nav.solutions': 'Solutions',
@@ -226,6 +277,57 @@ const translations = {
     'projects.card3.text': 'Practical guidance and thoughtful ideas for digital strategy, implementation, and growth.'
   },
   de: {
+    'website.heroAlt': 'Website-Beispiel aus dem Portfolio von Ivancevic Web',
+    'website.projectAlt': 'Vorschau der im Portfolio verlinkten Ivancevic Art Website',
+    "website.metaTitle": "Website erstellen lassen in Österreich | Ivancevic Web",
+    "website.metaDescription": "Website erstellen lassen für kleine Unternehmen in Österreich. Persönliche Beratung, responsive Umsetzung und transparente Angebote. Kostenloses Erstgespräch.",
+    "website.eyebrow": "Website-Erstellung für KMU",
+    "website.title": "Website erstellen lassen für kleine Unternehmen in Österreich",
+    "website.intro": "Sie möchten eine professionelle Website erstellen lassen, die zu Ihrem Unternehmen passt? Wir unterstützen kleine Unternehmen und Selbstständige mit persönlicher Beratung, klarer Struktur und einer Website, die auf Smartphone, Tablet und Desktop funktioniert. In Wien und Niederösterreich sowie für Projekte in ganz Österreich.",
+    "website.cta": "Kostenloses Erstgespräch",
+    "website.costLink": "Kosten und Leistungen ansehen",
+    "website.heroCardTitle": "Persönlich betreut. Klar geplant.",
+    "website.heroCardText": "Eine Website, die Ihre Leistungen verständlich zeigt und Interessierten den Kontakt erleichtert.",
+    "website.businessText": "Wenn Sie eine Firmenwebsite erstellen lassen, stehen Ihre Leistungen und Ihre Kunden im Mittelpunkt. Ob neue Website oder Modernisierung eines bestehenden Auftritts: Wir richten Struktur und Funktionen nach den Anforderungen Ihres Unternehmens aus.",
+    "website.firmenwebsiteTitle": "Eine Firmenwebsite, die zu Ihrem Unternehmen passt",
+    "website.feature0": "Individuelles, modernes Design",
+    "website.feature1": "Responsive Darstellung für Smartphone, Tablet und Desktop",
+    "website.feature2": "Bis zu 5 Inhaltsseiten",
+    "website.feature3": "Kontaktmöglichkeit",
+    "website.feature4": "Technische Grundkonfiguration und Basis-SEO",
+    "website.feature5": "Datenschutzfreundliche Umsetzung und Veröffentlichung",
+    "website.scope": "Diese Leistungen gehören zum bestehenden Business-Website-Paket. Zusätzliche Seiten oder Funktionen werden im individuellen Angebot berücksichtigt.",
+    "website.leistungenTitle": "Was Ihre professionelle Website beinhaltet",
+    "website.planningText": "Im kostenlosen Erstgespräch besprechen wir, was Sie benötigen. Umfang, gewünschte Funktionen und individuelle Anforderungen bilden die Grundlage für Ihr Angebot. Vor Projektbeginn erhalten Sie einen transparenten Preis.",
+    "website.planningNote": "Welche Inhalte, Abstimmungen und Schritte bis zur Veröffentlichung erforderlich sind, klären wir für Ihr konkretes Projekt.",
+    "website.planungTitle": "So planen wir Ihre neue Website",
+    "website.costIntro": "Unser Business-Website-Paket startet bei 990 €, das Paket Website + SEO bei 1.490 €. Der tatsächliche Preis hängt vom Umfang, den gewünschten Funktionen und den individuellen Anforderungen ab.",
+    "website.costDetails": "Für ein passendes Angebot besprechen wir unter anderem die Anzahl der Seiten, benötigte Inhalte, Sprachversionen, zusätzliche Funktionen und den gewünschten SEO-Umfang. Welche Leistungen und laufenden Kosten für Domain, Hosting oder Betreuung anfallen, klären wir im Angebot.",
+    "website.care": "Website Betreuung wird auf der bestehenden Preisseite ab 49 € pro Monat angeboten. Der genaue Leistungsumfang richtet sich nach dem gewählten Betreuungsmodell.",
+    "website.allPrices": "Alle Pakete und Preise ansehen",
+    "website.kostenTitle": "Website erstellen lassen: Kosten und Leistungen",
+    "website.local": "Kleine Unternehmen und Selbstständige brauchen einen Webauftritt, der ihre Leistungen klar vermittelt. Wir legen Wert auf persönlichen Kontakt, verständliche Beratung und Lösungen nach Bedarf. Sie erhalten Unterstützung in Wien und Niederösterreich; Projekte sind in ganz Österreich möglich.",
+    "website.aboutLink": "Mehr über Ivancevic Web",
+    "website.kmuTitle": "Website-Erstellung für KMU in Österreich",
+    "website.projectName": "Ivancevic Art",
+    "website.projectText": "Die Website von Ivancevic Art ist bereits in unserem Portfolio verlinkt. Sehen Sie sich dieses Website-Beispiel und weitere digitale Projekte an.",
+    "website.projectLink": "Website-Beispiel im Portfolio ansehen",
+    "website.projekteTitle": "Einblicke in unsere Website-Projekte",
+    "website.faq0q": "Was kostet es, eine Website erstellen zu lassen?",
+    "website.faq0a": "Das Business-Website-Paket beginnt bei 990 €, Website + SEO bei 1.490 €. Alle Preise sind Einstiegspreise. Ihr Angebot richtet sich nach dem konkreten Umfang und den gewünschten Funktionen.",
+    "website.faq1q": "Kann meine bestehende Website modernisiert werden?",
+    "website.faq1a": "Ja. Wir modernisieren bestehende Websites oder entwickeln einen neuen professionellen Webauftritt. Im Erstgespräch besprechen wir Ihre aktuelle Situation.",
+    "website.faq2q": "Welche Inhalte werden benötigt?",
+    "website.faq2a": "Informationen zu Ihrem Unternehmen, Ihren Leistungen und Ihren Kontaktmöglichkeiten helfen bei der Planung. Welche Texte und Bilder benötigt werden und wer sie bereitstellt, klären wir für Ihr Projekt.",
+    "website.faq3q": "Wie lange dauert die Website-Erstellung?",
+    "website.faq3a": "Der Zeitplan hängt vom Umfang, den Funktionen und der Verfügbarkeit der Inhalte ab. Die konkrete Planung besprechen wir für Ihr Projekt.",
+    "website.faq4q": "Gibt es Unterstützung nach der Veröffentlichung?",
+    "website.faq4a": "Wir bieten Website-Wartung und technische Betreuung an. Das Betreuungspaket beginnt bei 49 € pro Monat; der genaue Umfang richtet sich nach dem gewählten Modell.",
+    "website.fragenTitle": "Häufige Fragen zur Website-Erstellung",
+    "website.contactText": "Erzählen Sie uns, ob Sie eine neue Website benötigen oder Ihren bestehenden Auftritt verbessern möchten. Wir besprechen Ihre Anforderungen und empfehlen eine passende Lösung – kostenlos und unverbindlich.",
+    "website.contactLink": "Website-Projekt besprechen",
+    "website.erstgespraechTitle": "Kostenloses Erstgespräch für Ihre Website",
+    "services.website.more": "Mehr zur Website-Erstellung",
     'nav.about': 'Über uns',
     'nav.services': 'Leistungen',
     'nav.solutions': 'Lösungen',
@@ -454,6 +556,7 @@ const translations = {
 };
 
 function applyLanguage(lang) {
+  lang = translations[lang] ? lang : 'de';
   const selected = translations[lang] || translations.en;
   document.documentElement.lang = lang;
 
@@ -468,11 +571,20 @@ function applyLanguage(lang) {
     button.classList.toggle('active', button.dataset.lang === lang);
   });
 
+  document.querySelectorAll('[data-i18n-alt]').forEach((element) => {
+    const value = selected[element.dataset.i18nAlt];
+    if (value) element.alt = value;
+  });
+
   const page = document.body.dataset.page;
   const pageTitle = page ? selected[`${page}.metaTitle`] : '';
   if (pageTitle) {
     document.title = pageTitle;
   }
+
+  const pageDescription = page ? selected[`${page}.metaDescription`] : '';
+  const description = document.querySelector('meta[name="description"]');
+  if (description && pageDescription) description.content = pageDescription;
 
   try { localStorage.setItem('site-lang', lang); } catch (_) {}
 }

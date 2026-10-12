@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.ivancevicweb.com/</loc>
+    <loc>https://ivancevicweb.com/</loc>
   </url>
   <url>
-    <loc>https://www.ivancevicweb.com/projects.html</loc>
+    <loc>https://ivancevicweb.com/projects.html</loc>
   </url>
   <url>
-    <loc>https://www.ivancevicweb.com/impressum.html</loc>
+    <loc>https://ivancevicweb.com/impressum.html</loc>
   </url>
   <url>
-    <loc>https://www.ivancevicweb.com/dataprotection.html</loc>
+    <loc>https://ivancevicweb.com/dataprotection.html</loc>
+  </url>
+  <url>
+    <loc>https://ivancevicweb.com/website-erstellung.html</loc>
   </url>
 </urlset>

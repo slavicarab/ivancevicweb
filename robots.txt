@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.ivancevicweb.com/sitemap.xml
+Sitemap: https://ivancevicweb.com/sitemap.xml
