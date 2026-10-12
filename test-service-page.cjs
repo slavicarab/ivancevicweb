@@ -4,16 +4,18 @@ const vm = require('node:vm');
 for (const [filename, page, priceKeys] of [
   ['website-erstellung.html', 'website', ['business', 'seo']],
   ['website-wartung.html', 'maintenance', ['care']],
-  ['seo-optimierung.html', 'seo', []]
+  ['seo-optimierung.html', 'seo', []],
+  ['google-unternehmensprofil.html', 'profile', []]
 ]) {
 const html = fs.readFileSync(filename, 'utf8');
 const elements = [...html.matchAll(/data-i18n="([^"]+)"[^>]*>([^<]*)</g)].map(match => ({ dataset: {i18n: match[1]}, textContent: match[2] }));
 const images = [...html.matchAll(/data-i18n-alt="([^"]+)"/g)].map(match => ({dataset: {i18nAlt: match[1]}, alt: ''}));
+const labels = [...html.matchAll(/data-i18n-aria-label="([^"]+)"/g)].map(match => ({dataset: {i18nAriaLabel: match[1]}, setAttribute(key, value) {this[key] = value;}}));
 const description = {content: ''};
 const buttons = ['de', 'en'].map(lang => ({dataset: {lang}, classList: {toggle() {}}, addEventListener(type, cb) {this.click = cb;}}));
 const document = {
   documentElement: {lang: 'de'}, body: {dataset: {page}},
-  querySelectorAll(selector) {return selector === '[data-i18n]' ? elements : selector === '[data-i18n-alt]' ? images : selector === '.lang-toggle' ? buttons : [];},
+  querySelectorAll(selector) {return selector === '[data-i18n]' ? elements : selector === '[data-i18n-alt]' ? images : selector === '[data-i18n-aria-label]' ? labels : selector === '.lang-toggle' ? buttons : [];},
   querySelector(selector) {return selector === 'meta[name="description"]' ? description : null;}
 };
 const store = new Map();
@@ -34,6 +36,11 @@ for (const lang of ['de','en','de']) {
     const expected = vm.runInContext(`translations.${lang}[${JSON.stringify(image.dataset.i18nAlt)}]`,context);
     assert(expected, `Missing ${lang} alternative: ${image.dataset.i18nAlt}`);
     assert.equal(image.alt, expected);
+  }
+  for (const label of labels) {
+    const expected = vm.runInContext(`translations.${lang}[${JSON.stringify(label.dataset.i18nAriaLabel)}]`,context);
+    assert(expected);
+    assert.equal(label['aria-label'], expected);
   }
 }
 assert.equal((html.match(/<h1\b/g)||[]).length,1);
@@ -80,10 +87,43 @@ if (page === 'seo') {
   assert(html.includes('class="container hero-grid"') && html.includes('class="contact-grid"'));
   assert(html.includes('name="viewport" content="width=device-width, initial-scale=1.0"'));
 }
+if (page === 'profile') {
+  const title = 'Google Unternehmensprofil optimieren | Ivancevic Web';
+  const meta = 'Google Unternehmensprofil erstellen und optimieren lassen. Local SEO, Google Maps Optimierung und laufende Betreuung für Unternehmen in Österreich.';
+  assert(html.includes(`<title>${title}</title>`));
+  assert(html.includes(`name="description" content="${meta}"`));
+  assert(html.includes('>Google Unternehmensprofil &amp; Local SEO für Unternehmen</h1>'));
+  assert(html.includes('Werden Sie für potenzielle Kunden in Ihrer Region besser auffindbar.'));
+  assert.equal((html.match(/class="price">Preis auf Anfrage<\/p>/g) || []).length, 2);
+  assert.equal((html.match(/<h3 data-i18n="profile.faq\d+q"/g) || []).length, 7);
+  for (const id of ['warum','einrichtung','optimierung','betreuung','local-seo','leistungen','fragen','kontakt']) assert(html.includes(`id="${id}"`));
+  for (const href of ['seo-optimierung.html','website-erstellung.html','index.html#kontakt','#leistungen']) assert(html.includes(`href="${href}"`));
+  assert(!html.includes('contact-topic-link'));
+  assert(fs.readFileSync('index.html','utf8').includes('href="google-unternehmensprofil.html" data-i18n="services.profile.more"'));
+  assert(html.includes('name="viewport" content="width=device-width, initial-scale=1.0"'));
+  assert(html.includes('class="container hero-grid"') && html.includes('class="contact-grid"'));
+  assert.equal(labels.length, 2, 'Navigation and back-to-top labels translate');
+  const decode = text => text.replace(/&amp;/g, '&').replace(/&#x27;/g, "'").replace(/&quot;/g, '"').replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+  for (const match of html.matchAll(/data-i18n="([^"]+)"[^>]*>([^<]*)</g)) {
+    const expected = vm.runInContext(`translations.de[${JSON.stringify(match[1])}]`,context);
+    assert.equal(decode(match[2]).trim(), expected, `German HTML content: ${match[1]}`);
+  }
+  const mainParagraphs = content => [...content.match(/<main[\s\S]*?<\/main>/)[0].matchAll(/<p\b[^>]*>([^<]+)<\/p>/g)].map(match => decode(match[1]).trim()).filter(text => text.length > 60);
+  const generalSeoCopy = new Set(mainParagraphs(fs.readFileSync('seo-optimierung.html','utf8')));
+  assert(mainParagraphs(html).every(text => !generalSeoCopy.has(text)), 'No duplicated general SEO paragraphs');
+  for (const lang of ['de','en']) {
+    const copy = vm.runInContext(`Object.values(Object.fromEntries(Object.entries(translations.${lang}).filter(([key]) => key.startsWith('profile.')))).join(' ')`,context);
+    assert(!/\d+[.,]?\d*\s*€|€\s*\d|wordpress|woocommerce|typo3|google ads|google partner|zertifizier|testimonial/i.test(copy));
+    const required = lang === 'de'
+      ? ['Google My Business','Einzugsgebiet','rein online','Google bestimmt','kostenlos','kostenpflichtig','primärer Inhaber','Administratorrollen','fragen keine Google-Kontopasswörter ab und speichern sie nicht','individuell','technischen Zugänge','Plattform','können nicht zugesagt werden','echte Kundenbewertungen']
+      : ['Google My Business','service area','Online-only','Google determines','free','paid services','primary owner','manager roles','do not request or store Google account passwords','individually','technical access','platform','cannot be promised','genuine customer reviews'];
+    for (const phrase of required) assert(copy.includes(phrase), `Missing ${lang} profile clarification: ${phrase}`);
+  }
+}
 console.log(`${filename}: translation, metadata, H1, pricing, canonical, links and sitemap checks passed.`);
 }
 
-const publicPages = ['index.html', 'website-erstellung.html', 'website-wartung.html', 'seo-optimierung.html', 'projects.html', 'impressum.html', 'dataprotection.html'];
+const publicPages = ['index.html', 'website-erstellung.html', 'website-wartung.html', 'seo-optimierung.html', 'google-unternehmensprofil.html', 'projects.html', 'impressum.html', 'dataprotection.html'];
 const pages = new Map(publicPages.map(name => [name, fs.readFileSync(name, 'utf8')]));
 const sitemap = fs.readFileSync('sitemap.xml', 'utf8');
 const sitemapUrls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => match[1]);

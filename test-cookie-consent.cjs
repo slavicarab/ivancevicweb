@@ -62,7 +62,7 @@ assert.equal(unavailable.panel.hidden, true);
 accepted.storage.set(key, stored(false));
 accepted.events.storage({key});
 assert.equal(accepted.window._paq.at(-2)[0], 'forgetConsentGiven');
-for (const name of ['index.html', 'projects.html', 'impressum.html', 'dataprotection.html', 'website-erstellung.html', 'website-wartung.html', 'seo-optimierung.html']) {
+for (const name of ['index.html', 'projects.html', 'impressum.html', 'dataprotection.html', 'website-erstellung.html', 'website-wartung.html', 'seo-optimierung.html', 'google-unternehmensprofil.html']) {
   const html = fs.readFileSync(name, 'utf8');
   assert(html.includes('src="cookie-consent.js"'));
   assert(!/fonts\.google|cdnjs\.cloudflare|trackPageView/.test(html));
