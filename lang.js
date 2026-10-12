@@ -202,15 +202,17 @@ const translations = {
     'footer.privacy': 'Privacy Policy',
     'privacy.title': 'Privacy Policy',
     'privacy.metaTitle': 'Privacy Policy',
-    'privacy.intro': 'This website does not use Google Analytics, tracking cookies, contact forms, newsletters, or visitor analytics. No personal visitor data is intentionally collected through this website.',
-    'privacy.noTrackingTitle': 'No analytics or tracking',
-    'privacy.noTrackingText': 'No analytics tools are used. The website does not create user profiles and does not use marketing or tracking technologies.',
-    'privacy.contactTitle': 'Contact by phone or email',
-    'privacy.contactText': 'If you contact me voluntarily by phone or email, the information you provide will be used only to respond to your request. This data is not shared with third parties unless required by law.',
+    'privacy.intro': 'This website uses self-hosted Matomo for optional visitor analytics, only with your consent. Website and analytics data are hosted in Europe and are not transferred to the USA. We do not use Google Analytics or advertising trackers.',
+    'privacy.noTrackingTitle': 'Optional local analytics',
+    'privacy.noTrackingText': 'With your consent (Article 6(1)(a) GDPR), Matomo at matomo.ivancevicart.com measures page visits and link interactions, using browser information and first-party cookies. Rejecting optional cookies prevents the analytics script from loading and prevents analytics requests. Use Cookie settings in the footer to withdraw consent at any time; withdrawal stops future tracking and removes accessible Matomo cookies without affecting the lawfulness of earlier processing.',
+    'privacy.contactTitle': 'Contact requests',
+    'privacy.contactText': 'If you contact us by form, phone or email, we process the details you provide to respond to your request and, where applicable, take steps before entering a contract (Article 6(1)(b) GDPR). Form messages are stored locally and sent to our configured email recipient. Service providers may process these details to deliver hosting and email services.',
     'privacy.hostingTitle': 'Technical operation',
-    'privacy.hostingText': 'When a website is opened, basic technical access data may be processed by the hosting provider to deliver the page securely and reliably. This website operator does not evaluate this data for visitor tracking.',
+    'privacy.hostingText': 'Technical access data may be processed to deliver and secure the website (Article 6(1)(f) GDPR). Fonts and icons are provided without automatic requests to Google or external font and icon CDNs. External links connect to their respective providers only when you follow them.',
     'privacy.rightsTitle': 'Your rights',
-    'privacy.rightsText': 'You may request information, correction, or deletion of personal data that may exist because you contacted me directly.',
+    'privacy.rightsText': 'Under the GDPR, you may request access, correction, deletion, restriction and, where applicable, portability of your personal data, object to processing based on legitimate interests, and withdraw consent. You may lodge a complaint with the Austrian Data Protection Authority (dsb.gv.at).',
+    'privacy.cookiesTitle': 'Cookies and browser storage',
+    'privacy.cookiesText': 'Necessary localStorage: ivancevic-cookie-consent records your choice, timestamp and notice version for 180 days; site-lang stores your chosen language until you clear browser storage. Optional Matomo cookies: _pk_id.* (visitor identifier, 180 days), _pk_ses.* (visit session, 30 minutes), and _pk_ref.* (referral source, 180 days, if set). These analytics cookies are enabled only after consent. No marketing cookies are used. Cookie settings let you accept, reject or change your choice at any time. Clearing browser storage or expiry prompts a new choice. Cookie lifetimes do not define how long analytics records are retained on the server.',
     'privacy.controllerTitle': 'Contact',
     'privacy.controllerText': 'For privacy questions, please contact:',
     'projects.eyebrow': 'Services',
@@ -426,15 +428,17 @@ const translations = {
     'footer.privacy': 'Datenschutz',
     'privacy.title': 'Datenschutz',
     'privacy.metaTitle': 'Datenschutz',
-    'privacy.intro': 'Diese Website verwendet kein Google Analytics, keine Tracking-Cookies, kein Kontaktformular, keinen Newsletter und keine Besucheranalyse. \u00dcber diese Website werden bewusst keine personenbezogenen Besucherdaten erhoben.',
-    'privacy.noTrackingTitle': 'Keine Analyse und kein Tracking',
-    'privacy.noTrackingText': 'Es werden keine Analyse-Tools eingesetzt. Die Website erstellt keine Nutzerprofile und verwendet keine Marketing- oder Tracking-Technologien.',
-    'privacy.contactTitle': 'Kontakt per Telefon oder E-Mail',
-    'privacy.contactText': 'Wenn Sie mich freiwillig per Telefon oder E-Mail kontaktieren, werden die von Ihnen \u00fcbermittelten Angaben ausschlie\u00dflich zur Beantwortung Ihrer Anfrage verwendet. Eine Weitergabe an Dritte erfolgt nicht, sofern keine gesetzliche Verpflichtung besteht.',
+    'privacy.intro': 'Diese Website verwendet selbst gehostetes Matomo zur optionalen Besucheranalyse, ausschließlich mit Ihrer Einwilligung. Website- und Analysedaten werden in Europa gespeichert und nicht in die USA übertragen. Wir verwenden weder Google Analytics noch Werbetracker.',
+    'privacy.noTrackingTitle': 'Optionale lokale Analyse',
+    'privacy.noTrackingText': 'Mit Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) misst Matomo unter matomo.ivancevicart.com Seitenaufrufe und Link-Interaktionen anhand von Browserinformationen und Erstanbieter-Cookies. Wenn Sie optionale Cookies ablehnen, werden weder das Analyseskript geladen noch Analyseanfragen gesendet. Über Cookie-Einstellungen im Footer können Sie Ihre Einwilligung jederzeit widerrufen. Dies beendet zukünftiges Tracking und entfernt zugängliche Matomo-Cookies; die Rechtmäßigkeit vorheriger Verarbeitung bleibt unberührt.',
+    'privacy.contactTitle': 'Kontaktanfragen',
+    'privacy.contactText': 'Wenn Sie uns per Formular, Telefon oder E-Mail kontaktieren, verarbeiten wir Ihre Angaben zur Beantwortung Ihrer Anfrage und gegebenenfalls für vorvertragliche Maßnahmen (Art. 6 Abs. 1 lit. b DSGVO). Formularnachrichten werden lokal gespeichert und an unsere konfigurierte E-Mail-Adresse gesendet. Dienstleister können diese Angaben zur Bereitstellung von Hosting und E-Mail verarbeiten.',
     'privacy.hostingTitle': 'Technischer Betrieb',
-    'privacy.hostingText': 'Beim Aufruf einer Website k\u00f6nnen durch den Hosting-Anbieter grundlegende technische Zugriffsdaten verarbeitet werden, um die Seite sicher und zuverl\u00e4ssig bereitzustellen. Diese Daten werden von der Website-Betreiberin nicht zur Besucheranalyse ausgewertet.',
+    'privacy.hostingText': 'Technische Zugriffsdaten können zur Bereitstellung und Absicherung der Website verarbeitet werden (Art. 6 Abs. 1 lit. f DSGVO). Schriften und Symbole werden ohne automatische Anfragen an Google oder externe Schrift- und Symbol-CDNs bereitgestellt. Externe Links verbinden Sie erst beim Anklicken mit dem jeweiligen Anbieter.',
     'privacy.rightsTitle': 'Ihre Rechte',
-    'privacy.rightsText': 'Sie k\u00f6nnen Auskunft, Berichtigung oder L\u00f6schung personenbezogener Daten verlangen, die eventuell dadurch vorhanden sind, dass Sie mich direkt kontaktiert haben.',
+    'privacy.rightsText': 'Nach der DSGVO können Sie Auskunft, Berichtigung, Löschung, Einschränkung und gegebenenfalls Datenübertragbarkeit verlangen, einer Verarbeitung auf Grundlage berechtigter Interessen widersprechen und Einwilligungen widerrufen. Sie können sich bei der österreichischen Datenschutzbehörde (dsb.gv.at) beschweren.',
+    'privacy.cookiesTitle': 'Cookies und Browserspeicher',
+    'privacy.cookiesText': 'Notwendiger localStorage: ivancevic-cookie-consent speichert Ihre Auswahl, den Zeitpunkt und die Version des Hinweises für 180 Tage; site-lang speichert Ihre gewählte Sprache bis zur Löschung des Browserspeichers. Optionale Matomo-Cookies: _pk_id.* (Besucherkennung, 180 Tage), _pk_ses.* (Besuchssitzung, 30 Minuten) und _pk_ref.* (Verweisquelle, 180 Tage, sofern gesetzt). Diese Analyse-Cookies werden erst nach Einwilligung aktiviert. Es werden keine Marketing-Cookies verwendet. Über Cookie-Einstellungen können Sie Ihre Auswahl jederzeit ändern. Nach Löschung des Browserspeichers oder Ablauf wird erneut gefragt. Cookie-Laufzeiten bestimmen nicht die Speicherdauer der Analysedaten auf dem Server.',
     'privacy.controllerTitle': 'Kontakt',
     'privacy.controllerText': 'Bei Fragen zum Datenschutz kontaktieren Sie mich bitte:',
     'projects.eyebrow': 'Leistungen',
@@ -470,11 +474,12 @@ function applyLanguage(lang) {
     document.title = pageTitle;
   }
 
-  localStorage.setItem('site-lang', lang);
+  try { localStorage.setItem('site-lang', lang); } catch (_) {}
 }
 
 function initLanguageSwitcher() {
-  const savedLang = localStorage.getItem('site-lang') || 'de';
+  let savedLang = 'de';
+  try { savedLang = localStorage.getItem('site-lang') || 'de'; } catch (_) {}
   document.querySelectorAll('.lang-toggle').forEach((button) => {
     button.addEventListener('click', () => applyLanguage(button.dataset.lang));
   });
